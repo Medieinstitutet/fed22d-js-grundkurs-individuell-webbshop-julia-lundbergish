@@ -1,3 +1,23 @@
+* {box-sizing: border-box;
+}
+
+#gottfrid{
+    display: none; 
+
+    /* Hjälper detta ändå vid SEO eller tänker jag snett? */
+}
+
+.navlink{
+    display: none;
+}
+
+.logo{
+    height: 60px;
+    /* Annat sätt att minska storleken på bilden i mobilformat? */
+    margin-top: 20px;
+    margin-left: 2%;
+}
+
 .nav-button {
     width: 35px;
     height: 35px;
@@ -19,14 +39,22 @@
     margin-bottom: 4px;
   }
 
+  
+
+.special-donut{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
 
 /* Desktop layout */
 
-#gottfrid{
-    display: none; 
+@media screen and (min-width:1024px) {
 
-    /* Hjälper detta ändå vid SEO eller tänker jag snett? */
-}
+    #gottfrid{
+        display: none; 
+    }
 
 .logo{
     margin-top: 30px;
@@ -79,6 +107,5 @@ nav {
     grid-row-end: 3;
   }
 
-  .special-donut{
 
-  }
+}
