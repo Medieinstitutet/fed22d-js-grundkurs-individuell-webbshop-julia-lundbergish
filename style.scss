@@ -19,14 +19,66 @@
     margin-bottom: 4px;
   }
 
+
+/* Desktop layout */
+
+#gottfrid{
+    display: none; 
+
+    /* Hjälper detta ändå vid SEO eller tänker jag snett? */
+}
+
+.logo{
+    margin-top: 30px;
+    margin-left: 4%;
+}
+
+.nav-button{
+    display: none;
+}
+
+nav {
+    background-color: red;
+    display: block;
+    height: 100px;
+    width: 100%;
+    background: white;
+    margin: 0px;  
+    z-index: 9;
+}
+
+.navlink{
+    text-decoration: underline;
+    list-style: none;
+    max-width: 800px;
+    width: 35%;
+    margin-top: -55px;
+    margin-left: auto;
+    padding: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    a {
+        color: black;
+    }
+
+    a:hover {
+        color: grey;
+    }
+}
+
   .donuts{
       display: grid;
       grid-template-columns: repeat(3, 1fr);
   }
 
-  .donutName-1{
+  .special-donut{
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 3;
+  }
+
+  .special-donut{
+
   }
