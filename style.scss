@@ -40,14 +40,13 @@
   }
 
   
-.special-donut{
-    background-color: green;
+  .special-donut{
     display: flex;
     flex: 3 0px;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: 40px;
 
-   
     img{ 
         width: 140px;
         height: auto;
@@ -67,7 +66,6 @@
         display: inline;
         margin-left: -37%;
         margin-top: 38px;
-
     }
     .minus{
         margin-left: 72%;
@@ -93,16 +91,15 @@
     }
     .amount{
         margin-top: 96px;
-        margin-left: -37%;
+        margin-left: -42%;
     }
     .amount-text{
         margin-top: 96px;
-        margin-left: 1%;
+        margin-left: 0;
     }
-
     .sum{
        margin-top: 116px; 
-       margin-left: -5.5%;
+       margin-left: -4.5%;
        position: relative;
     }
 }
