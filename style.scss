@@ -13,7 +13,7 @@
 
 .logo{
     height: 60px;
-    /* Annat sätt att minska storleken på bilden i mobilformat? */
+    /* Annat sätt att minska storleken på bilden i mobilformat? Den blir lite suddig.. */
     margin-top: 20px;
     margin-left: 2%;
 }
@@ -40,12 +40,75 @@
   }
 
   
-
 .special-donut{
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 3;
+    background-color: green;
+    display: flex;
+    flex: 3 0px;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+   
+    img{ 
+        width: 140px;
+        height: auto;
+        margin-right: 80px;
+        display: inline;
+    }
+    .donutNameSpecial{
+        font-family: 'Jost', sans-serif;
+        font-size: 1.2rem;
+        display: inline;
+        margin-left: -15%;
+        margin-top: 10px;
+    }
+    .donutName{
+        font-size: 1rem;
+        font-family: 'Jost', sans-serif;
+        display: inline;
+        margin-left: -37%;
+        margin-top: 38px;
+
+    }
+    .minus{
+        margin-left: 72%;
+        margin-right: 2%;
+        height: 35px;
+        width: 35px;
+        border: solid 1px black;
+        border-radius: 5px;
+        font-size: 1.5rem;
+        background-color: #AFDDFF;
+        margin-top: -45px;
+    }
+    .plus{
+        margin-left: 85%;
+        margin-right: 2%;
+        height: 35px;
+        width: 35px;
+        border: solid 1px black;
+        border-radius: 5px;
+        font-size: 1.5rem;
+        background-color: #AFDDFF;
+        margin-top: -45px;
+    }
+    .amount{
+        margin-top: 96px;
+        margin-left: -37%;
+    }
+    .amount-text{
+        margin-top: 96px;
+        margin-left: 1%;
+    }
+
+    .sum{
+       margin-top: 116px; 
+       margin-left: -5.5%;
+       position: relative;
+    }
+}
+
+.price{
+    visibility: hidden;
 }
 
 /* Desktop layout */

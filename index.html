@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
     <title>Gottfrids munkfabrik</title>
 </head>
@@ -37,23 +40,22 @@
 
         <section class="donuts">
             <article class="special-donut">
-               
-                <h2>Munknamn - xxkr</h2>
-                <h3>Munknamn</h3>
                 <img src="images/special-donut.png" alt="" height="240">
+                <h2 class="donutNameSpecial">Månadens donut</h2>
+                <h2 class="donutName">Munknamn - 22kr</h2>
                 <p class="description"></p>
                 <!-- Rating icons -->
-                <span class="price">22</span> kr
-                <span class="amount">0</span> st<br>
+                <span class="price">22</span>
+                <span class="amount">0</span><p class="amount-text"> st</p><br>
                 <span class="sum">0 kr</span>
-                <button data-operator="minus">-</button>
-                <button data-operator="plus">+</button>
+                <button class="plus" data-operator="plus">+</button>
+                <button class= "minus" data-operator="minus">-</button>
             </article>
             <article class="donutName">
                 <img src="" alt="">
-                <h2>Munknamn - xxkr</h2>
+                <h2>Munknamn</h2>
                 <!-- Rating icons -->
-                <span class="price">0</span> kr
+                <span class="price">0</span>
                 <span class="amount">0</span> st<br>
                 <span class="sum">0 kr</span>
                 <button data-operator="minus">-</button>
