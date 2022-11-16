@@ -64,8 +64,11 @@
         font-size: 1rem;
         font-family: 'Jost', sans-serif;
         display: inline;
-        margin-left: -37%;
+        margin-left: -36%;
         margin-top: 38px;
+    }
+    .description{
+        display: none;
     }
     .minus{
         margin-left: 72%;
@@ -165,7 +168,52 @@ nav {
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 3;
+
+    img{ 
+        width: auto;
+        height: 240px;
+        margin-right: 80px;
+        display: inline;
+        margin-left: 4%;
+    }
+
+    .donutNameSpecial,{
+        margin-left: -3%;
+        font-size: 1.8rem;
+        background-image: url("../images/blue-shape.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        padding-right: 50px;
+        padding-left: 50px;
+      }
+
+      .donutName{
+        font-size: 1.2rem;
+        margin-left: -21%;
+        margin-top: 65px;
+      }
+
+      .description{
+        display: inline;
+        margin-right: 35%;
+        margin-left: 25.2%;
+        margin-top: -125px;
+        font-size: 1rem;
+      }
+      .minus{
+        margin-left: 63%;
+        margin-right: 2%;
+        margin-top: -160px;
+    }
+    .plus{
+        margin-left: 100%;
+        margin-right: 2%;
+        margin-top: -26px;
+    }
+
   }
+
+  
 
 
 }
