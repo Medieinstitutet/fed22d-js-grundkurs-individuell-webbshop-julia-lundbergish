@@ -42,10 +42,13 @@ function decreaseCount(e) {
 //* Uppdatera kostnad av munk vid klick av plus och minus
 
 function updateDonutSum(donutElement) {
-    const donutSinglePrice = donutElement.querySelector('.price').innerHTML;
+    console.log(donutElement);
+    const donutSinglePrice = donutElement.parentElement.querySelector('.price').innerHTML;
     const orderedAmount = donutElement.querySelector('.amount').innerHTML;
 
-    const sum = donutSinglePrice * orderedAmount;
+    console.log(donutSinglePrice, orderedAmount);
+
+    const sum = Number(donutSinglePrice) * Number(orderedAmount);
 
     donutElement.querySelector('.sum').innerHTML = sum + ' kr';
 }
