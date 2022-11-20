@@ -164,14 +164,18 @@ nav {
         display: flex;
         flex-direction: row;
         background-color: red;
-
       }
+
+      .donutPrice{
+        background-color: aqua;
+      }
+
       .donutAmount{
         background-color: green;
+        margin-left: 80%;
       }
 
    
-
   }
 
   
