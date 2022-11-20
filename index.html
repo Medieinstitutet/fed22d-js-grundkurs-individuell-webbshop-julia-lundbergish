@@ -1,41 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
     <title>Gottfrids munkfabrik</title>
 </head>
+
 <body>
     <header>
-    <nav>
-        <h1 id="gottfrid">Gottfrids Munkfabrik</h1>
-        <img class="logo" src="images/Gottfrid-logo.png" alt="Gottfrids munkfabrik logotype" height="90">
-        <!-- Shopping cart icon -->
-        <p id="priceText"></p>
-        <ul class="navlink">
-            <li><a href="#">Om Oss</a></li>
-            <li><a href="#">Kontakt</a></li>
-            <li><a href="#">cart icon</a></li>
-        </ul>
-        <button class="nav-button">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
+        <nav>
+            <h1 id="gottfrid">Gottfrids Munkfabrik</h1>
+            <img class="logo" src="images/Gottfrid-logo.png" alt="Gottfrids munkfabrik logotype" height="90">
+            <!-- Shopping cart icon -->
+            <p id="priceText"></p>
+            <ul class="navlink">
+                <li><a href="#">Om Oss</a></li>
+                <li><a href="#">Kontakt</a></li>
+                <li><a href="#">cart icon</a></li>
+            </ul>
+            <button class="nav-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
     </header>
     <main>
-        
+
         <div class="filter">
-            <!-- Favorites/popular -->
-            <!-- A to Z -->
-            <!-- Price - low to high? -->
-            <!-- No filter? -->
+            <ul class="filterList"> Sortera efter:
+                <li class="filterItem"><a href="#">Populära</a></li>
+                <li class="filterItem"><a href="#">A-Z</a></li>
+                <li class="filterItem"><a href="#">Pris</a></li>
+            </ul>
+        </div>
+
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropBtn">Filtrera</button>
+            <div id="filterDropdown" class="dropdown-content">
+                <a href="#">Populära</a>
+                <a href="#">A-Z</a>
+                <a href="#">Pris</a>
+            </div>
         </div>
 
         <section class="donuts">
@@ -44,112 +56,187 @@
                 <div class="donutContent">
                     <h2 class="donutNameSpecial">Månadens donut</h2>
                     <h2 class="donutName">Caramel Crisp</h2>
-                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil aperiam, optio ullam alias dolore maiores necessitatibus sit dolor molestiae tenetur cum. 
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil aperiam, optio
+                        ullam alias dolore maiores necessitatibus sit dolor molestiae tenetur cum.
                         <br><br>
-                        Odio quasi magnam nobis debitis unde incidunt. Commodi laborum velit.</p>
+                        Odio quasi magnam nobis debitis unde incidunt. Commodi laborum velit.
+                    </p>
                     <!-- Rating icons -->
-                        <div class="donutDetails">
-                            <div class="donutPrice">
-                                <span><span class="price">22</span> kr</span>
-                            </div>
-                            <div class="donutAmount">
-                                <span class="amount">0</span> st
-                                <span class="sum">0 kr</span>
-                                <button class= "minus" data-operator="minus">-</button>
-                                <button class="plus" data-operator="plus">+</button>
-                            </div>
+                    <div class="donutDetails">
+                        <div class="donutPrice">
+                            <span><span class="price">22</span> kr
+                                <!-- Hur fan stylar jag kr? -->
                         </div>
+                        <div class="donutAmount">
+                            <span class="amount">0</span> st
+                            <span class="sum">0 kr</span>
+                            <button class="minus" data-operator="minus">-</button>
+                            <button class="plus" data-operator="plus">+</button>
+                        </div>
+                    </div>
                 </div>
             </article>
-            <article class="donutName">
-                <img src="" alt="">
-                <h2>Munknamn</h2>
-                <!-- Rating icons -->
-                <span class="price">0</span>
-                <span class="amount">0</span> st<br>
-                <span class="sum">0 kr</span>
-                <button data-operator="minus">-</button>
-                <button data-operator="plus">+</button>
+            <article class="donutGrid">
+                <img src="images/special-donut.png" alt="" height="240">
+                <div class="donutContent">
+                    <h2 class="donutName">Caramel Crisp</h2>
+                    <!-- Rating icons -->
+                    <div class="donutDetails">
+                        <div class="donutPrice">
+                            <span><span class="price">16</span> kr
+                        </div>
+                        <div class="donutAmount">
+                            <span class="amount">0</span> st
+                            <span class="sum">0 kr</span>
+                            <button class="minus" data-operator="minus">-</button>
+                            <button class="plus" data-operator="plus">+</button>
+                        </div>
+                    </div>
+                </div>
             </article>
-            <article class="donutName">
-                <img src="" alt="">
-                <h2>Munknamn - xxkr</h2>
-                <!-- Rating icons -->
-                <span class="price">0</span> kr
-                <span class="amount">0</span> st<br>
-                <span class="sum">0 kr</span>
-                <button data-operator="minus">-</button>
-                <button data-operator="plus">+</button>
+            <article class="donutGrid">
+                <img src="images/special-donut.png" alt="" height="240">
+                <div class="donutContent">
+                    <h2 class="donutName">Caramel Crisp</h2>
+                    <!-- Rating icons -->
+                    <div class="donutDetails">
+                        <div class="donutPrice">
+                            <span><span class="price">16</span> kr
+                        </div>
+                        <div class="donutAmount">
+                            <span class="amount">0</span> st
+                            <span class="sum">0 kr</span>
+                            <button class="minus" data-operator="minus">-</button>
+                            <button class="plus" data-operator="plus">+</button>
+                        </div>
+                    </div>
+                </div>
             </article>
-            <article class="donutName">
-                <img src="" alt="">
-                <h2>Munknamn - xxkr</h2>
-                <!-- Rating icons -->
-                <span class="price">0</span> kr
-                <span class="amount">0</span> st<br>
-                <span class="sum">0 kr</span>
-                <button data-operator="minus">-</button>
-                <button data-operator="plus">+</button>
+            <article class="donutGrid">
+                <img src="images/special-donut.png" alt="" height="240">
+                <div class="donutContent">
+                    <h2 class="donutName">Caramel Crisp</h2>
+                    <!-- Rating icons -->
+                    <div class="donutDetails">
+                        <div class="donutPrice">
+                            <span><span class="price">16</span> kr
+                        </div>
+                        <div class="donutAmount">
+                            <span class="amount">0</span> st
+                            <span class="sum">0 kr</span>
+                            <button class="minus" data-operator="minus">-</button>
+                            <button class="plus" data-operator="plus">+</button>
+                        </div>
+                    </div>
+                </div>
             </article>
-            <article class="donutName">
-                <img src="" alt="">
-                <h2>Munknamn - xxkr</h2>
-                <!-- Rating icons -->
-                <span class="price">0</span> kr
-                <span class="amount">0</span> st<br>
-                <span class="sum">0 kr</span>
-                <button data-operator="minus">-</button>
-                <button data-operator="plus">+</button>
+            <article class="donutGrid">
+                <img src="images/special-donut.png" alt="" height="240">
+                <div class="donutContent">
+                    <h2 class="donutName">Caramel Crisp</h2>
+                    <!-- Rating icons -->
+                    <div class="donutDetails">
+                        <div class="donutPrice">
+                            <span><span class="price">16</span> kr
+                        </div>
+                        <div class="donutAmount">
+                            <span class="amount">0</span> st
+                            <span class="sum">0 kr</span>
+                            <button class="minus" data-operator="minus">-</button>
+                            <button class="plus" data-operator="plus">+</button>
+                        </div>
+                    </div>
+                </div>
             </article>
-            <article class="donutName">
-                <img src="" alt="">
-                <h2>Munknamn - xxkr</h2>
-                <!-- Rating icons -->
-                <span class="price">0</span> kr
-                <span class="amount">0</span> st<br>
-                <span class="sum">0 kr</span>
-                <button data-operator="minus">-</button>
-                <button data-operator="plus">+</button>
+            <article class="donutGrid">
+                <img src="images/special-donut.png" alt="" height="240">
+                <div class="donutContent">
+                    <h2 class="donutName">Caramel Crisp</h2>
+                    <!-- Rating icons -->
+                    <div class="donutDetails">
+                        <div class="donutPrice">
+                            <span><span class="price">16</span> kr
+                        </div>
+                        <div class="donutAmount">
+                            <span class="amount">0</span> st
+                            <span class="sum">0 kr</span>
+                            <button class="minus" data-operator="minus">-</button>
+                            <button class="plus" data-operator="plus">+</button>
+                        </div>
+                    </div>
+                </div>
             </article>
-            <article class="donutName">
-                <img src="" alt="">
-                <h2>Munknamn - xxkr</h2>
-                <!-- Rating icons -->
-                <span class="price">0</span> kr
-                <span class="amount">0</span> st<br>
-                <span class="sum">0 kr</span>
-                <button data-operator="minus">-</button>
-                <button data-operator="plus">+</button>
+            <article class="donutGrid">
+                <img src="images/special-donut.png" alt="" height="240">
+                <div class="donutContent">
+                    <h2 class="donutName">Caramel Crisp</h2>
+                    <!-- Rating icons -->
+                    <div class="donutDetails">
+                        <div class="donutPrice">
+                            <span><span class="price">16</span> kr
+                        </div>
+                        <div class="donutAmount">
+                            <span class="amount">0</span> st
+                            <span class="sum">0 kr</span>
+                            <button class="minus" data-operator="minus">-</button>
+                            <button class="plus" data-operator="plus">+</button>
+                        </div>
+                    </div>
+                </div>
             </article>
-            <article class="donutName">
-                <img src="" alt="">
-                <h2>Munknamn - xxkr</h2>
-                <!-- Rating icons -->
-                <span class="price">0</span> kr
-                <span class="amount">0</span> st<br>
-                <span class="sum">0 kr</span>
-                <button data-operator="minus">-</button>
-                <button data-operator="plus">+</button>
+            <article class="donutGrid">
+                <img src="images/special-donut.png" alt="" height="240">
+                <div class="donutContent">
+                    <h2 class="donutName">Caramel Crisp</h2>
+                    <!-- Rating icons -->
+                    <div class="donutDetails">
+                        <div class="donutPrice">
+                            <span><span class="price">16</span> kr
+                        </div>
+                        <div class="donutAmount">
+                            <span class="amount">0</span> st
+                            <span class="sum">0 kr</span>
+                            <button class="minus" data-operator="minus">-</button>
+                            <button class="plus" data-operator="plus">+</button>
+                        </div>
+                    </div>
+                </div>
             </article>
-            <article class="donutName">
-                <img src="" alt="">
-                <h2>Munknamn - xxkr</h2>
-                <!-- Rating icons -->
-                <span class="price">0</span> kr
-                <span class="amount">0</span> st<br>
-                <span class="sum">0 kr</span>
-                <button data-operator="minus">-</button>
-                <button data-operator="plus">+</button>
+            <article class="donutGrid">
+                <img src="images/special-donut.png" alt="" height="240">
+                <div class="donutContent">
+                    <h2 class="donutName">Caramel Crisp</h2>
+                    <!-- Rating icons -->
+                    <div class="donutDetails">
+                        <div class="donutPrice">
+                            <span><span class="price">16</span> kr
+                        </div>
+                        <div class="donutAmount">
+                            <span class="amount">0</span> st
+                            <span class="sum">0 kr</span>
+                            <button class="minus" data-operator="minus">-</button>
+                            <button class="plus" data-operator="plus">+</button>
+                        </div>
+                    </div>
+                </div>
             </article>
-            <article class="donutName">
-                <img src="" alt="">
-                <h2>Munknamn - xxkr</h2>
-                <!-- Rating icons -->
-                <span class="price">0</span> kr
-                <span class="amount">0</span> st<br>
-                <span class="sum">0 kr</span>
-                <button data-operator="minus">-</button>
-                <button data-operator="plus">+</button>
+            <article class="donutGrid">
+                <img src="images/special-donut.png" alt="" height="240">
+                <div class="donutContent">
+                    <h2 class="donutName">Caramel Crisp</h2>
+                    <!-- Rating icons -->
+                    <div class="donutDetails">
+                        <div class="donutPrice">
+                            <span><span class="price">16</span> kr
+                        </div>
+                        <div class="donutAmount">
+                            <span class="amount">0</span> st
+                            <span class="sum">0 kr</span>
+                            <button class="minus" data-operator="minus">-</button>
+                            <button class="plus" data-operator="plus">+</button>
+                        </div>
+                    </div>
+                </div>
             </article>
         </section>
 
@@ -158,4 +245,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
