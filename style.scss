@@ -129,8 +129,11 @@
     justify-content: space-between;
   }
   .price {
-    margin-left: 50%;
-    background-color: aqua;
+    margin-left: 100%;
+  }
+  .priceText{
+    margin-left: 230%;
+    margin-top: -23px;
   }
   .minus {
     height: 35px;
@@ -188,8 +191,11 @@
     justify-content: space-between;
   }
   .price {
-    margin-left: 50%;
-    background-color: aqua;
+    margin-left: 140%;
+  }
+  .priceText{
+    margin-top: -23px;
+    margin-left: 260%;
   }
   .minus {
     height: 35px;
@@ -324,7 +330,7 @@
     }
 
     .donutContent {
-      margin-left: 28%;
+      margin-left: 30%;
       margin-top: -280px;
       margin-right: 20%;
     }
@@ -339,6 +345,12 @@
       margin-left: -20px;
     }
 
+    .priceText{
+      margin-top: -28px;
+      margin-left: 130%;
+      font-size: 1.2rem;
+    }  
+
     .description {
       display: block;
     }
@@ -351,6 +363,7 @@
 
     .price {
       font-size: 1.2rem;
+      margin-left: 5%;
     }
 
     .description {
@@ -414,6 +427,11 @@
       .price {
         font-size: 1.2rem;
         margin-left: 12%;
+      }
+      .priceText{
+        margin-left: 130%;
+        margin-top: -28px;
+        font-size: 1.2rem;
       }
   
       .donutDetails {

@@ -1,3 +1,91 @@
+//* Objekt 
+
+const donuts = [
+  {
+    name: 'Red velvet',
+    price: 22,
+    rating: 4,
+    amount: 0,
+  },
+  {
+    name: 'Caramel Crisp',
+    price: 16,
+    rating: 4,
+    amount: 0,
+  },
+  {
+    name: 'La La Latte',
+    price: 14,
+    rating: 5,
+    amount: 0,
+  },
+  {
+    name: 'Tutti Frutti',
+    price: 14,
+    rating: 3,
+    amount: 0,
+  },
+  {
+    name: 'Oreo',
+    price: 16,
+    rating: 5,
+    amount: 0,
+  },
+  {
+    name: 'Choklad',
+    price: 12,
+    rating: 4,
+    amount: 0,
+  },
+  {
+    name: 'Viol',
+    price: 16,
+    rating: 3,
+    amount: 0,
+  },
+  {
+    name: 'Lime key pie',
+    price: 20,
+    rating: 4,
+    amount: 0,
+  },
+  {
+    name: 'Cheesecake',
+    price: 16,
+    rating: 4,
+    amount: 0,
+  },
+  {
+    name: 'Glazed',
+    price: 12,
+    rating: 5,
+    amount: 0,
+  }
+]
+
+const donutContainer = document.querySelector('#donutContainer');
+
+for (let i = 0; i < donuts.length; i++) {
+  donutContainer.innerHTML += `
+  <article class="donutGrid">
+  <div class="donutContent">
+  <h3 class="donutName">${donuts[i].name}</h2>
+  <span class="price">${donuts[i].price} kr</span>
+  <button class="plus" data-id="${i}"></button>
+  </article>
+  `;
+}
+
+function updateDonutAmount(e) {
+  console.log(e.currentTarget.dataset.id);
+}
+
+document.querySelectorAll('button.plus').forEach((btn) => {
+  btn.addEventListener('click', updateDonutAmount);
+})
+
+//* Kommentar jag inte har kommit på vad den ska heta än
+
 const decreaseButtons = document.querySelectorAll(
   'button[data-operator="minus"]'
 );
