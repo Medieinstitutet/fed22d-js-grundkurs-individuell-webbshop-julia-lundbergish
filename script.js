@@ -116,13 +116,25 @@ function renderDonuts() {
     `;
   }
 
-  document.querySelectorAll("button.plus").forEach((btn) => {
+
+//* Denna koden eller den under?
+const plusButtons = donutContainer.querySelectorAll('button.plus');
+
+plusButtons.forEach(btn => {
+
+btn.addEventListener('click', updateDonutAmount);
+
+});
+
+//* Andra varianten
+
+ document.querySelectorAll("button.plus").forEach((btn) => {
     btn.addEventListener("click", updateDonutAmount);
   });
 
   document.querySelectorAll("button.minus").forEach((btn) => {
     btn.addEventListener("click", updateDonutAmountMinus);
-  });
+  }); 
 
   //* Nedanstående funkar inte? 
 
@@ -138,6 +150,9 @@ function renderDonuts() {
   // document.querySelector("#cartSum").innerHTML = sum;
 
 }
+
+//* Behövs koden nedan fortfarande eller har jag skrivit ungefär samma sak i det
+//* som direkt följer for-loopen
 
 //* Öka antal munkar vid klick av plusknapp
 
@@ -166,7 +181,7 @@ function updateDonutAmountMinus(e) {
   updateDonutSum(e.currentTarget.parentElement);
 }
 
-renderDonuts();
+renderDonuts(); /* Om den här tas bort kommer min CSS tillbaka */
 
 //* Kommentar jag inte har kommit på vad den ska heta än
 
