@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d5373c47b8.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -241,7 +242,70 @@
         </section>
     </div>
 
-    <div id="cartSum"></div>
+    <div class="cartContainer">
+        <div id="cartSum"></div>
+        <div class="cartHeader">
+            <h3>Beställ</h3>
+        </div>
+        <form class="form" id="form">
+            <div class="form-control">
+                <label for="">Förnamn</label>
+                <input type="text" placeholder="Förnamn" id="name">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="">Efternamn</label>
+                <input type="text" placeholder="Efternamn" id="lastName">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="">Adress</label>
+                <input type="text" placeholder="Gatuadress" id="street">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="">Postnummer</label>
+                <input type="number" placeholder="Postnummer" id="zipCode">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="">Postort</label>
+                <input type="text" placeholder="Postort" id="city">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="">Portkod</label>
+                <input type="number" placeholder="Portkod" id="code">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="">Telefonnummer</label>
+                <input type="tel" placeholder="Telefonnummer" id="phone">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="">E-postadress</label>
+                <input type="email" placeholder="E-postadress" id="email">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+        </form>
+    </div>
 
     </main>
 
@@ -250,7 +314,7 @@
 
 </html>
 
-popup i html för enskild munk 
+<!-- popup i html för enskild munk 
 eller lägg till utskrift i objekt (class hidden) labba med css! 
 
 donutgrid:nth-of-type(2){
@@ -259,4 +323,4 @@ donutgrid:nth-of-type(2){
 
 första munken stylas med css, ska inte ingå i arrayen
 
-CSS trasig pga alla divar inte inlagda i JS
+CSS trasig pga alla divar inte inlagda i JS -->

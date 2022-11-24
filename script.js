@@ -152,7 +152,7 @@ btn.addEventListener('click', updateDonutAmount);
 }
 
 //* Behövs koden nedan fortfarande eller har jag skrivit ungefär samma sak i det
-//* som direkt följer for-loopen
+//* som direkt följer for-loopen?
 
 //* Öka antal munkar vid klick av plusknapp
 
