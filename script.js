@@ -96,8 +96,12 @@ function renderDonuts() {
   skriver in <article>-elementen.
   */
   for (let i = 0; i < donuts.length; i++) {
+    let extraCSSClass = '';
+    if (i === 0) {
+      extraCSSClass = 'special-donut';
+    }
     donutContainer.innerHTML += `
-        <article class="donutGrid">
+        <article class="donutGrid ${extraCSSClass}">
           <img src="${donuts[i].imgFile}" alt="${donuts[i].name}" height="240">
           <div class="donutContent">
             <h3 class="donutName">${donuts[i].name}</h2>
