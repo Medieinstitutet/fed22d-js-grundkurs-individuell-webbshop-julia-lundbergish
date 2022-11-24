@@ -85,34 +85,35 @@ const donuts = [
 
 //* Munkcontainer
 
-const donutContainer = document.querySelector("#donutContainer");
+const donutContainer = document.querySelector("#donutContainer .donuts"); // Ändrade selektor här
 
 function renderDonuts() {
-  donutContainer.innerHTML = "";
+  donutContainer.innerHTML = ""; // Här töms hela innehållet i #donutContainer
 
+  /*
+  I utskriften, ta bort <section id="donutContainer"> så att du bara fyller på "inne i den",
+  istället för att skriva ut den också och även <div class="donuts">, så att du "bara"
+  skriver in <article>-elementen.
+  */
   for (let i = 0; i < donuts.length; i++) {
     donutContainer.innerHTML += `
-    <section id="donutContainer">
-      <div class="donuts">
         <article class="donutGrid">
-        <img src="${donuts[i].imgFile}" alt="${donuts[i].name}" height="240">
+          <img src="${donuts[i].imgFile}" alt="${donuts[i].name}" height="240">
           <div class="donutContent">
-          <h3 class="donutName">${donuts[i].name}</h2>
-          <div class="donutDetails">
-          <div class="donutPrice">
-          <div class="donutAmount">
-          <span class="price">${donuts[i].price}</span> kr
-          </div>
-            <span class="amount">${donuts[i].amount}</span> st
-            <span class="sum">${donuts[i].sum} kr</span>
-            <button class="minus" data-id="${i}">-</button>
-            <button class="plus" data-id="${i}">+</button>  
-          </div>
-          </div>
-          </div>
+            <h3 class="donutName">${donuts[i].name}</h2>
+            <div class="donutDetails">
+              <div class="donutPrice">
+                <div class="donutAmount">
+                  <span class="price">${donuts[i].price}</span> kr
+                </div>
+                <span class="amount">${donuts[i].amount}</span> st
+                <span class="sum">${donuts[i].sum} kr</span>
+                <button class="minus" data-id="${i}">-</button>
+                <button class="plus" data-id="${i}">+</button>  
+              </div>
+            </div>
           </div>
         </article>
-    </section>
     `;
   }
 
@@ -157,17 +158,22 @@ btn.addEventListener('click', updateDonutAmount);
 //* Öka antal munkar vid klick av plusknapp
 
 function updateDonutAmount(e) {
+  const id = e.currentTarget.dataset.id; // Om du vill skicka med ID:t till funktionen updateDonutSum
+  // "plocka upp" den här, och sedan skicka med den på rad 168 till funktionen updateDonutSum
+
   const amountEl = e.currentTarget.parentElement.querySelector(".amount");
 
   let amount = Number(amountEl.innerText);
   amountEl.innerHTML = amount + 1;
 
-  updateDonutSum(e.currentTarget.parentElement);
+  updateDonutSum(e.currentTarget.parentElement, id);
 }
 
 //* Minska antal munkar vid klick av minusknapp
 
 function updateDonutAmountMinus(e) {
+  const id = e.currentTarget.dataset.id;
+  
   const amountEl = e.currentTarget.parentElement.querySelector(".amount");
 
   let amount = Number(amountEl.innerText);
@@ -178,7 +184,7 @@ function updateDonutAmountMinus(e) {
 
   amountEl.innerHTML = amount - 1;
 
-  updateDonutSum(e.currentTarget.parentElement);
+  updateDonutSum(e.currentTarget.parentElement, id);
 }
 
 renderDonuts(); /* Om den här tas bort kommer min CSS tillbaka */
@@ -201,8 +207,9 @@ for (let i = 0; i < decreaseButtons.length; i++) {
 
 //* Uppdatera kostnad av munk vid klick av plus och minus
 
-function updateDonutSum(donutElement) {
+function updateDonutSum(donutElement, id) {
   console.log(donutElement);
+  console.log('id', id);
   const donutSinglePrice =
     donutElement.parentElement.querySelector(".price").innerHTML;
   const orderedAmount = donutElement.querySelector(".amount").innerHTML;
