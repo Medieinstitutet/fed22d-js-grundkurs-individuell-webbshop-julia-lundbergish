@@ -51,7 +51,7 @@
 
 /* Dropdown */
 
-.dropBtn {
+#dropBtn {
   background-color: #afddff;
   color: black;
   padding: 5px 10px;
@@ -176,14 +176,14 @@
   }
   .donutName {
     font-size: 1rem;
-    margin-left: 10%;
+    margin-left: 0%;
     font-family: "Jost", sans-serif;
   }
   .description {
     display: none;
   }
   .donutContent {
-    margin-left: 40%;
+    margin-left: 45.5%;
     margin-top: -155px;
   }
   .donutDetails {
@@ -191,7 +191,7 @@
     justify-content: space-between;
   }
   .price {
-    margin-left: 140%;
+    margin-left: 0%;
   }
   .priceText{
     margin-top: -23px;
@@ -394,6 +394,51 @@
     padding-top: 80px;
     padding-bottom: 80px;
     font-family: 'Jost', sans-serif;
+    &:nth-of-type(2){
+      button{
+        background-color: #FFCAE3;
+      }
+    }
+    &:nth-of-type(3){
+      button{
+        background-color: #FFF8BA;
+    }
+  }
+  &:nth-of-type(4){
+    button{
+      background-color: #D4FDD3;
+  }
+  }
+  &:nth-of-type(5){
+    button{
+      background-color: #afddff;
+    }
+  }
+  &:nth-of-type(6){
+    button{
+      background-color: #FFCAE3;
+  }
+  }
+  &:nth-of-type(7){
+  button{
+    background-color: #FFF8BA;
+  }
+  }
+  &:nth-of-type(8){
+    button{
+      background-color: #D4FDD3;
+    }
+  }
+  &:nth-of-type(9){
+    button{
+      background-color: #afddff;
+  }
+  }
+  &:nth-of-type(10){
+    button{
+      background-color: #FFCAE3;
+  }
+  }
     img {
         width: auto;
         height: 300px;
@@ -408,16 +453,6 @@
         margin-left: 12%;
       }
   
-      .donutNameSpecial {
-        font-size: 1.8rem;
-        background-image: url("../images/blue-shape.png");
-        background-repeat: no-repeat;
-        background-size: 36%;
-        padding-right: 50px;
-        padding-left: 28px;
-        margin-left: -28px;
-      }
-  
       .donutName {
         font-size: 1.2rem;
         margin-left: 0;
@@ -426,7 +461,7 @@
   
       .price {
         font-size: 1.2rem;
-        margin-left: 12%;
+        margin-left: 0%;
       }
       .priceText{
         margin-left: 130%;
@@ -450,20 +485,70 @@
           margin-left: 15px;
         }
       }
+  }
 
+  /* Kassa och formulär */
+
+  .cartContainer{
+    margin-left: 35%;
+    margin-right: 30%;
+    background-color: #afddff;
+    padding: 20px;
+    #orderDonutsText{
+      font-family: 'Jost', sans-serif;
+    }
+    .header{
+      padding: 20px;
+  }
+  .form{
+    padding: 30px 40px;
+  }
+
+  .form-control{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  .form-control label{
+    display: inline-block;
+    margin-bottom: 5px;    
+    font-family: 'Jost', sans-serif;
+  }
+  .form-control input{
+    border: 1px solid black;
+    border-radius: 6px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+  }
+  .form-control i{
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    visibility: hidden;
+  }
+  .form-control small{
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .form button{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    display: block;
+    font-size: 1rem;
+    font-family: 'Jost', sans-serif;
+    border-radius: 6px;
+    padding: 10px;
+    width: 100%;
 
   }
 
 }
 
-/* 
-Stor div
-Div i nederkant - flex för att positionera pris i vänsterkant 
-och resten i högerkant
-Div för antal och knappar ? 
 
-Styla klart 
-Fundera på if-satser kring beställning
-Strunta i att lägga munkar i objects och göra en array för tillfället
-Loopa igenom donuts-array för att läsa in donuts (?)
-*/
+}

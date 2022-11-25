@@ -90,18 +90,40 @@ const donutContainer = document.querySelector("#donutContainer .donuts"); // Än
 function renderDonuts() {
   donutContainer.innerHTML = ""; // Här töms hela innehållet i #donutContainer
 
-  /*
-  I utskriften, ta bort <section id="donutContainer"> så att du bara fyller på "inne i den",
-  istället för att skriva ut den också och även <div class="donuts">, så att du "bara"
-  skriver in <article>-elementen.
-  */
+  // Specialstylad donut 
   for (let i = 0; i < donuts.length; i++) {
     let extraCSSClass = '';
     if (i === 0) {
-      extraCSSClass = 'special-donut';
-    }
-    donutContainer.innerHTML += `
-        <article class="donutGrid ${extraCSSClass}">
+      donutContainer.innerHTML += `
+      <article class="special-donut">
+                    <img src="images/special-donut.png" alt="" height="240">
+                    <div class="donutContent">
+                        <h2 class="donutNameSpecial">Månadens donut</h2>
+                        <h3 class="donutName">Caramel Crisp</h2>
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil aperiam, optio
+                            ullam alias dolore maiores necessitatibus sit dolor molestiae tenetur cum.
+                            <br><br>
+                            Odio quasi magnam nobis debitis unde incidunt. Commodi laborum velit.
+                        </p>
+                        <!-- Rating icons -->
+                        <div class="donutDetails">
+                            <div class="donutPrice">
+                                <span><span class="price">22</span><p class="priceText"> kr</p>
+                            </div>
+                            <div class="donutAmount">
+                                <span class="amount">0</span> st
+                                <span class="sum">0 kr</span>
+                                <button class="minus" data-id="${i}">-</button>
+                                <button class="plus" data-id="${i}">+</button> 
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                `
+    } else {
+      // Donutgrid
+      donutContainer.innerHTML += `
+        <article class="donutGrid">
           <img src="${donuts[i].imgFile}" alt="${donuts[i].name}" height="240">
           <div class="donutContent">
             <h3 class="donutName">${donuts[i].name}</h2>
@@ -119,27 +141,50 @@ function renderDonuts() {
           </div>
         </article>
     `;
+    }
   }
 
+  //* Funktion för att öka antal munkar vid klick av plusknapp
 
-//* Denna koden eller den under?
-const plusButtons = donutContainer.querySelectorAll('button.plus');
+  function updateDonutAmount(e) {
+    const id = e.currentTarget.dataset.id; // Om du vill skicka med ID:t till funktionen updateDonutSum
+    // "plocka upp" den här, och sedan skicka med den på rad 168 till funktionen updateDonutSum
 
-plusButtons.forEach(btn => {
+    const amountEl = e.currentTarget.parentElement.querySelector(".amount");
 
-btn.addEventListener('click', updateDonutAmount);
+    let amount = Number(amountEl.innerText);
+    amountEl.innerHTML = amount + 1;
 
-});
+    updateDonutSum(e.currentTarget.parentElement, id);
+  }
 
-//* Andra varianten
+  //* Funktion för att minska antal munkar vid klick av minusknapp
 
- document.querySelectorAll("button.plus").forEach((btn) => {
+  function updateDonutAmountMinus(e) {
+    const id = e.currentTarget.dataset.id;
+
+    const amountEl = e.currentTarget.parentElement.querySelector(".amount");
+
+    let amount = Number(amountEl.innerText);
+
+    if (amount - 1 < 0) {
+      return;
+    }
+
+    amountEl.innerHTML = amount - 1;
+
+    updateDonutSum(e.currentTarget.parentElement, id);
+  }
+
+  //* Plus och minus - uppdatera antal munkar
+
+  document.querySelectorAll("button.plus").forEach((btn) => {
     btn.addEventListener("click", updateDonutAmount);
   });
 
   document.querySelectorAll("button.minus").forEach((btn) => {
     btn.addEventListener("click", updateDonutAmountMinus);
-  }); 
+  });
 
   //* Nedanstående funkar inte? 
 
@@ -156,57 +201,8 @@ btn.addEventListener('click', updateDonutAmount);
 
 }
 
-//* Behövs koden nedan fortfarande eller har jag skrivit ungefär samma sak i det
-//* som direkt följer for-loopen?
-
-//* Öka antal munkar vid klick av plusknapp
-
-function updateDonutAmount(e) {
-  const id = e.currentTarget.dataset.id; // Om du vill skicka med ID:t till funktionen updateDonutSum
-  // "plocka upp" den här, och sedan skicka med den på rad 168 till funktionen updateDonutSum
-
-  const amountEl = e.currentTarget.parentElement.querySelector(".amount");
-
-  let amount = Number(amountEl.innerText);
-  amountEl.innerHTML = amount + 1;
-
-  updateDonutSum(e.currentTarget.parentElement, id);
-}
-
-//* Minska antal munkar vid klick av minusknapp
-
-function updateDonutAmountMinus(e) {
-  const id = e.currentTarget.dataset.id;
-  
-  const amountEl = e.currentTarget.parentElement.querySelector(".amount");
-
-  let amount = Number(amountEl.innerText);
-
-  if (amount - 1 < 0) {
-    return;
-  }
-
-  amountEl.innerHTML = amount - 1;
-
-  updateDonutSum(e.currentTarget.parentElement, id);
-}
-
-renderDonuts(); /* Om den här tas bort kommer min CSS tillbaka */
-
-//* Kommentar jag inte har kommit på vad den ska heta än
-
-const decreaseButtons = document.querySelectorAll(
-  'button[data-operator="minus"]'
-);
-
-const increaseButtons = document.querySelectorAll(
-  'button[data-operator="plus"]'
-);
-
-for (let i = 0; i < decreaseButtons.length; i++) {
-  decreaseButtons[i].addEventListener("click", decreaseCount);
-  increaseButtons[i].addEventListener("click", increaseCount);
-}
+// Funktion för att skriva ut munkar 
+renderDonuts();
 
 
 //* Uppdatera kostnad av munk vid klick av plus och minus
@@ -227,6 +223,8 @@ function updateDonutSum(donutElement, id) {
 
 //* Dropdownfilter - mobil
 
-function myFunction() {
+document.getElementById("dropBtn").onclick = function () { filterDisplay() };
+
+function filterDisplay() {
   document.getElementById("filterDropdown").classList.toggle("show");
 }
