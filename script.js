@@ -257,7 +257,7 @@ form.addEventListener('submit', (e) => {
 
 function checkInputs() {
   const firstNameValue = firstName.value.trim();
-  const lastNamevalue = lastName.value.trim();
+  const lastNameValue = lastName.value.trim();
   const streetValue = street.value.trim();
   const zipCodeValue = zipCode.value.trim();
   const cityValue = city.value.trim();
@@ -274,6 +274,24 @@ function checkInputs() {
     setSuccessFor(firstName);
   }
 
+  if(lastNameValue === '') {
+    // show error
+    // add error class
+    setErrorFor(street, 'Måste fyllas i');
+  } else {
+    // add success class
+    setSuccessFor(street);
+  }
+
+  if(streetValue === '') {
+    // show error
+    // add error class
+    setErrorFor(lastName, 'Måste fyllas i');
+  } else {
+    // add success class
+    setSuccessFor(lastName);
+  }
+
   if(emailValue === '') {
     setErrorFor(email, 'Måste fyllas i')
   } else if(!isEmail(emailValue)) {
@@ -286,24 +304,31 @@ function checkInputs() {
 function setErrorFor(input, message) {
   const formControl = input.parentElement; //parent = form-control
   const small = formControl.querySelector('small');
+  formControl.classList.remove('success');
+  formControl.classList.add('error');
 
   // error class
   formControl.className = 'form-control error'; 
 
   // felmeddelande i small-tagg
   small.innerText = message;
-
 }
 
-function setSuccessFor(input) {
+function setSuccessFor(input, message) {
   const formControl = input.parentElement;
-  formControl.className = 'form-control success';
+  const small = formControl.querySelector('small');
+  formControl.classList.add('success');
+  formControl.classList.remove('error');
+
+  // rensa errormeddelande
+  small.innerText = "";
 }
 
 function isEmail(email) {
-  return "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
-  .test(email);
+  return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g.test(email);
 }
+
+
 
 // ---- FORMULÄR ----
 // Nya fält för kortbetalning och faktura 
@@ -321,4 +346,8 @@ function isEmail(email) {
 // Responsitivitet - surfplatta
 // Publicera!!!!
 // Byt bilder på munkarna
+// Betyg på munkarna
+// Varför står det på github att jag använder CSS? 
 
+//toggle hidden HTML
+// tar bort toggle hidden i js 

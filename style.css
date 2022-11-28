@@ -216,6 +216,7 @@
   font-size: 0.9rem;
 }
 
+/* ------------ Surfplatta layout -------------- */
 /* ------------ Desktop layout -------------- */
 @media screen and (min-width: 1024px) {
   #gottfrid {
