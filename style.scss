@@ -523,17 +523,35 @@
     font-family: 'Jost', sans-serif;
     font-size: 1rem;
   }
+  .form-control.success input{
+    border-color: #2ecc71;
+  }
+  .form-control.error input{
+    border-color: #e74c3c;
+  }
   .form-control i{
     position: absolute;
     top: 40px;
     right: 10px;
     visibility: hidden;
   }
+  .form-control.success i.fa-check-circle {
+    visibility: visible;
+    color: #2ecc71;
+  }
+  .form-control.error i.fa-exclamation-circle{
+    visibility: visible;
+    color: #e74c3c;
+  }
   .form-control small{
     visibility: hidden;
     position: absolute;
     bottom: 0;
     left: 0;
+  }
+  .form-control small{
+    visibility: visible;
+    color:#e74c3c;
   }
   .form button{
     background-color: white;

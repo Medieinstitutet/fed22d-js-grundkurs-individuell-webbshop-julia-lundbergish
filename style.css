@@ -459,17 +459,35 @@
     font-family: "Jost", sans-serif;
     font-size: 1rem;
   }
+  .cartContainer .form-control.success input {
+    border-color: #2ecc71;
+  }
+  .cartContainer .form-control.error input {
+    border-color: #e74c3c;
+  }
   .cartContainer .form-control i {
     position: absolute;
     top: 40px;
     right: 10px;
     visibility: hidden;
   }
+  .cartContainer .form-control.success i.fa-check-circle {
+    visibility: visible;
+    color: #2ecc71;
+  }
+  .cartContainer .form-control.error i.fa-exclamation-circle {
+    visibility: visible;
+    color: #e74c3c;
+  }
   .cartContainer .form-control small {
     visibility: hidden;
     position: absolute;
     bottom: 0;
     left: 0;
+  }
+  .cartContainer .form-control small {
+    visibility: visible;
+    color: #e74c3c;
   }
   .cartContainer .form button {
     background-color: white;

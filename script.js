@@ -176,7 +176,7 @@ function renderDonuts() {
     updateDonutSum(e.currentTarget.parentElement, id);
   }
 
-  //* Plus och minus - uppdatera antal munkar
+  //* Plus och minus - uppdatera antal munkar vid klick
 
   document.querySelectorAll("button.plus").forEach((btn) => {
     btn.addEventListener("click", updateDonutAmount);
@@ -186,15 +186,21 @@ function renderDonuts() {
     btn.addEventListener("click", updateDonutAmountMinus);
   });
 
-  //* Nedanstående funkar inte? 
+  
 
-  // const amount = donuts.reduce((previousValue, donut) => {
-  //   return donut.amount + previousValue;
-  // }, 0);
+  /* const amount = donuts.reduce((previousValue, donut) => {
+    return (donut.amount * donut.price) + previousValue;
+      }, 
+      0
+      );
+  
+    console.log(sum);
 
-  // const sum = donuts.reduce((previousValue, donut) => {
-  //   return donut.price + previousValue;
-  // }, 0);
+  const sum = donuts.reduce((previousValue, donut) => {
+    return donut.price + previousValue;
+    }, 
+    0
+    ); */
 
   // document.querySelector("#cartSum").innerHTML = amount;
   // document.querySelector("#cartSum").innerHTML = sum;
@@ -227,4 +233,61 @@ document.getElementById("dropBtn").onclick = function () { filterDisplay() };
 
 function filterDisplay() {
   document.getElementById("filterDropdown").classList.toggle("show");
+}
+
+//* Form
+
+const form = document.getElementById('form');
+const firstName = document.getElementById('firstName');
+const lastName = document.getElementById('lastName');
+const street = document.getElementById('street');
+const zipCode = document.getElementById('zipCode');
+const city = document.getElementById('city');
+const code = document.getElementById('code');
+const phone = document.getElementById('phone');
+const email = document.getElementById('email');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  checkInputs();
+});
+
+// Kontrollera värden utifrån input
+
+function checkInputs() {
+  const firstNameValue = firstName.value.trim();
+  const lastNamevalue = lastName.value.trim();
+  const streetValue = street.value.trim();
+  const zipCodeValue = zipCode.value.trim();
+  const cityValue = city.value.trim();
+  const codeValue = code.value.trim();
+  const phoneValue = phone.value.trim();
+  const emailValue = email.value.trim();
+
+  if(firstNameValue === '') {
+    // show error
+    // add error class
+    setErrorFor(firstName, 'Måste fyllas i');
+  } else {
+    // add success class
+    setSuccessFor(firstName);
+  }
+}
+
+function setErrorFor(input, message) {
+  const formControl = input.parentElement; //parent = form-control
+  const small = formControl.querySelector('small');
+
+  // error class
+  formControl.className = 'form-control error'; 
+
+  // felmeddelande i small-tagg
+  small.innerText = message;
+
+}
+
+function setSuccessFor(input) {
+  const formControl = input.parentElement;
+  formControl.className = 'form-control success';
 }
