@@ -235,7 +235,7 @@ function filterDisplay() {
   document.getElementById("filterDropdown").classList.toggle("show");
 }
 
-//* Form
+//* Formulär
 
 const form = document.getElementById('form');
 const firstName = document.getElementById('firstName');
@@ -273,6 +273,14 @@ function checkInputs() {
     // add success class
     setSuccessFor(firstName);
   }
+
+  if(emailValue === '') {
+    setErrorFor(email, 'Måste fyllas i')
+  } else if(!isEmail(emailValue)) {
+    setErrorFor(email, 'Epostadressen är inte giltig');
+  } else {
+    setSuccessFor(email);
+  }
 }
 
 function setErrorFor(input, message) {
@@ -291,3 +299,26 @@ function setSuccessFor(input) {
   const formControl = input.parentElement;
   formControl.className = 'form-control success';
 }
+
+function isEmail(email) {
+  return "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+  .test(email);
+}
+
+// ---- FORMULÄR ----
+// Nya fält för kortbetalning och faktura 
+// Utgråad beställningsknapp när det är fel i formuläret
+// Knapp för att rensa beställning
+// Fält för rabattkod
+
+// ---- VARUKORG ----
+// Visuell feedback på att varukorgen uppdateras
+// Specialregler vid beställning 
+
+// ---- ÖVRIGT ----
+// Sortera i bokstavsordning
+// Prettier och ESLint
+// Responsitivitet - surfplatta
+// Publicera!!!!
+// Byt bilder på munkarna
+
