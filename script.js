@@ -371,7 +371,7 @@ function isPhone(phone) {
   return /^07(0|2|3|6|9)\d{7}$/g.test(phone);
 }
 
-// Rensa forumlär
+// Rensa formulär
 
 const clearFormBtn = document.querySelector('#clear');
 clearFormBtn.addEventListener('click', clearForm);
