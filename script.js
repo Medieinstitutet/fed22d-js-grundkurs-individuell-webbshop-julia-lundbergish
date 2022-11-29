@@ -265,6 +265,8 @@ function checkInputs() {
   const phoneValue = phone.value.trim();
   const emailValue = email.value.trim();
 
+  // Namn
+
   if(firstNameValue === '') {
     // show error
     // add error class
@@ -275,22 +277,50 @@ function checkInputs() {
   }
 
   if(lastNameValue === '') {
-    // show error
-    // add error class
+    setErrorFor(lastName, 'Måste fyllas i');
+  } else {
+    setSuccessFor(lastName);
+  }
+
+  // Adress
+
+  if(streetValue === '') {
     setErrorFor(street, 'Måste fyllas i');
   } else {
-    // add success class
     setSuccessFor(street);
   }
 
-  if(streetValue === '') {
-    // show error
-    // add error class
-    setErrorFor(lastName, 'Måste fyllas i');
+  if(zipCodeValue === '') {
+    setErrorFor(zipCode, 'Måste fyllas i (5 siffror)');
+  } else if (!isZipCode(zipCodeValue)) {
+    setErrorFor(zipCode, 'Postnumret är inte skrivet i ett giltigt format');
   } else {
-    // add success class
-    setSuccessFor(lastName);
+    setSuccessFor(zipCode);
   }
+
+  if(cityValue === '') {
+    setErrorFor(city, 'Måste fyllas i');
+  } else {
+    setSuccessFor(city);
+  }
+
+  if(codeValue === '') {
+    setErrorFor(code, 'Måste fyllas i - om du inte har en portkod skriv 0');
+  } else {
+    setSuccessFor(code);
+  }
+
+  // Telefon
+
+  if(phoneValue === '') {
+    setErrorFor(phone, 'Måste fyllas i');
+  } else if(!isPhone(phoneValue)) {
+    setErrorFor(phone, 'Telefonnumret är inte skrivet i ett giltigt format');
+  } else {
+    setSuccessFor(phone);
+  }
+
+  // Epost
 
   if(emailValue === '') {
     setErrorFor(email, 'Måste fyllas i')
@@ -299,7 +329,10 @@ function checkInputs() {
   } else {
     setSuccessFor(email);
   }
+
 }
+
+// Funktion för error och success
 
 function setErrorFor(input, message) {
   const formControl = input.parentElement; //parent = form-control
@@ -324,8 +357,32 @@ function setSuccessFor(input, message) {
   small.innerText = "";
 }
 
+// Regex-funktioner 
+
+function isZipCode(zipCode) {
+  return /[0-9]{3}[0-9]{2}/g.test(zipCode);
+}
+
 function isEmail(email) {
   return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g.test(email);
+}
+
+function isPhone(phone) {
+  return /^07(0|2|3|6|9)\d{7}$/g.test(phone);
+}
+
+// Rensa forumlär
+
+const clearFormBtn = document.querySelector('#clear');
+clearFormBtn.addEventListener('click', clearForm);
+
+function clearForm() {
+  const formController = document.querySelectorAll('.form-control');
+  document.querySelector('.form').reset();
+  formController.forEach((div) => {
+  div.classList.remove('success', 'error');
+  });
+  document.querySelector('small').classList.add('toggle-hidden');
 }
 
 
@@ -333,8 +390,8 @@ function isEmail(email) {
 // ---- FORMULÄR ----
 // Nya fält för kortbetalning och faktura 
 // Utgråad beställningsknapp när det är fel i formuläret
-// Knapp för att rensa beställning
-// Fält för rabattkod
+// x Knapp för att rensa beställning
+// x Fält för rabattkod
 
 // ---- VARUKORG ----
 // Visuell feedback på att varukorgen uppdateras
@@ -348,6 +405,3 @@ function isEmail(email) {
 // Byt bilder på munkarna
 // Betyg på munkarna
 // Varför står det på github att jag använder CSS? 
-
-//toggle hidden HTML
-// tar bort toggle hidden i js 

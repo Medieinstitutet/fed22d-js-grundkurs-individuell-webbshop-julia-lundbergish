@@ -109,56 +109,60 @@
                     <input type="text" placeholder="Förnamn" id="firstName">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
-                    <small></small>
+                    <small class="toggle-hidden"></small>
                 </div>
                 <div class="form-control">
                     <label for="">Efternamn</label>
                     <input type="text" placeholder="Efternamn" id="lastName">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
-                    <small></small>
+                    <small class="toggle-hidden"></small>
                 </div>
                 <div class="form-control">
                     <label for="">Adress</label>
                     <input type="text" placeholder="Gatuadress" id="street">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
-                    <small></small>
+                    <small class="toggle-hidden"></small>
                 </div>
                 <div class="form-control">
                     <label for="">Postnummer</label>
                     <input type="text" placeholder="Postnummer" id="zipCode" pattern="[0-9]+">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
-                    <small></small>
+                    <small class="toggle-hidden"></small>
                 </div>
                 <div class="form-control">
                     <label for="">Postort</label>
                     <input type="text" placeholder="Postort" id="city">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
-                    <small></small>
+                    <small class="toggle-hidden"></small>
                 </div>
                 <div class="form-control">
                     <label for="">Portkod</label>
                     <input type="text" placeholder="Portkod" id="code" pattern="[0-9]+">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
-                    <small></small>
+                    <small class="toggle-hidden"></small>
                 </div>
                 <div class="form-control">
                     <label for="">Telefonnummer</label>
                     <input type="tel" placeholder="Telefonnummer" id="phone">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
-                    <small></small>
+                    <small class="toggle-hidden"></small>
                 </div>
                 <div class="form-control">
                     <label for="">E-postadress</label>
                     <input type="email" placeholder="E-postadress" id="email">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
-                    <small></small>
+                    <small class="toggle-hidden"></small>
+                </div>
+                <div class="form-control discount">
+                    <label for="">Rabattkod</label>
+                    <input type="text" placeholder="Rabattkod" id="discount">
                 </div>
             <input type="radio" id="paymentOption1">
                 <label for="paymentOption1">Kort</label>
@@ -169,6 +173,7 @@
           <input type="checkbox" id="newsLetter" name="newsLetter" checked>
           <label for="newsLetter">Jag vill prenumerera på nyhetsbrevet</label>
           <button>Beställ</button>
+          <button id="clear" type="reset">Rensa</button>
         </div>
     </form>
     </div>
