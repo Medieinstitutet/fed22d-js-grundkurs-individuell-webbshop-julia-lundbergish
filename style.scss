@@ -294,9 +294,14 @@ button{
   margin-right: 2%;
   background-color: #afddff;
   padding: 5px;
+  #cartText{
+    font-family: 'Jost', sans-serif;
+    margin-left: 8%;
+  }
   #orderDonutsText{
     font-family: 'Jost', sans-serif;
-    margin-left: 5%;
+    margin-left: 8%;
+    margin-bottom: -15px;
   }
   .header{
     padding: 10px;
@@ -408,11 +413,133 @@ display:none;
 
 /* ------------ Surfplatta layout -------------- */
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 750px) {
 
+  .special-donut {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
 
+    img {
+      width: auto;
+      height: 220px;
+      margin-right: 80px;
+      display: inline;
+      margin-left: 4%;
+    }
 
+    .donutContent {
+      margin-left: 40%;
+      margin-top: -300px;
+      margin-right: 20%;
+    }
 
+    .donutNameSpecial {
+      margin-top: 80px;
+      font-size: 1.4rem;
+      background-image: url("../images/blue-shape.png");
+      background-repeat: no-repeat;
+      background-size: 65%;
+      padding-right: 50px;
+      padding-left: 15px;
+      margin-left: -15px;
+    }
+
+    .priceText{
+      margin-top: -23px;
+      margin-left: 130%;
+      font-size: 1rem;
+    }  
+
+    .description {
+      display: block;
+      font-size: 0.9rem;
+      margin-top: -15px;
+    }
+
+    .donutName {
+      font-size: 1.1rem;
+      margin-left: 0;
+      margin-top: -15px;
+    }
+
+    .price {
+      font-size: 1rem;
+      margin-left: 15%;
+      margin-top: -50px;
+    }
+
+    .description {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .donutDetails {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .donutAmount {
+      margin-left: 35%;
+      margin-top: -30px;
+
+      .plus {
+        margin-left: 15px;
+      }
+
+      .minus {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  .donutGrid{
+    img{
+    margin-left: 4%;
+    width: auto;
+    height:220px;
+    }
+    .donutName {
+      font-size: 1.1rem;
+    }
+    .description {
+      display: none;
+    }
+    .donutContent {
+      margin-left: 40%;
+      margin-top: -190px;
+  } 
+}
+#cart{
+  margin-left: 3%;
+  font-family: 'Jost', sans-serif;
+  padding-bottom: 20px;
+  .donutName{
+    margin-left: 16%;
+    margin-top: -95px;
+  }
+  .donutDetails{
+    margin-left: 16%;
+    margin-top: -15px;
+    font-size: 0.9rem;
+  }
+  .priceText {
+    margin-top: -21px;
+    margin-left: 3.5%;
+  }
+  .donutAmount{
+    margin-top: -5px;
+  }
+}
+.cartContainer{
+#cartText{
+  margin-left: 3%;
+}
+#orderDonutsText{
+  margin-left: 3%;
+  padding-bottom: 20px;
+}
+}
 }
 
 
@@ -524,7 +651,7 @@ display:none;
 
     .donutContent {
       margin-left: 30%;
-      margin-top: -280px;
+      margin-top: -350px;
       margin-right: 20%;
     }
 
@@ -635,6 +762,28 @@ display:none;
   }
 
   /* Kassa och formulär */
+
+  #cart{
+    margin-left: 8%;
+    font-family: 'Jost', sans-serif;
+    padding-bottom: 20px;
+    .donutName{
+      margin-left: 10%;
+      margin-top: -95px;
+    }
+    .donutDetails{
+      margin-left: 10%;
+      margin-top: -15px;
+      font-size: 0.9rem;
+    }
+    .priceText {
+      margin-top: -21px;
+      margin-left: 2%;
+    }
+    .donutAmount{
+      margin-top: -5px;
+    }
+  }
 
   .cartContainer{
     margin-left: 5%;
@@ -749,24 +898,25 @@ display:none;
   .cartOptions{
     margin-left: 5%;
   }
+  #cardCVV{
+    width: 20%;
+    margin-bottom: 10px;
+  }
+  #cardDetails{
+    display: none;
+    margin-left: 0;
+    margin-top: 10px;
+    margin-right: 58%;
+  }
+  #invoiceDetails{
+    display:none;
+    margin-left: 0;
+    margin-right: 58%;
+  }
+  .checkbox{
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+  }
 }
-#cardCVV{
-  width: 20%;
-  margin-bottom: 10px;
-}
-#cardDetails{
-  display: none;
-  margin-left: 0;
-  margin-top: 10px;
-  margin-right: 58%;
-}
-#invoiceDetails{
-  display:none;
-  margin-left: 0;
-  margin-right: 58%;
-}
-.checkbox{
-  font-family: 'Jost', sans-serif;
-  font-size: 0.9rem;
-}
+
 }

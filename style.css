@@ -271,9 +271,14 @@
   background-color: #afddff;
   padding: 5px;
 }
+.cartContainer #cartText {
+  font-family: "Jost", sans-serif;
+  margin-left: 8%;
+}
 .cartContainer #orderDonutsText {
   font-family: "Jost", sans-serif;
-  margin-left: 5%;
+  margin-left: 8%;
+  margin-bottom: -15px;
 }
 .cartContainer .header {
   padding: 10px;
@@ -390,6 +395,116 @@
 }
 
 /* ------------ Surfplatta layout -------------- */
+@media screen and (min-width: 750px) {
+  .special-donut {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  .special-donut img {
+    width: auto;
+    height: 220px;
+    margin-right: 80px;
+    display: inline;
+    margin-left: 4%;
+  }
+  .special-donut .donutContent {
+    margin-left: 40%;
+    margin-top: -300px;
+    margin-right: 20%;
+  }
+  .special-donut .donutNameSpecial {
+    margin-top: 80px;
+    font-size: 1.4rem;
+    background-image: url("../images/blue-shape.png");
+    background-repeat: no-repeat;
+    background-size: 65%;
+    padding-right: 50px;
+    padding-left: 15px;
+    margin-left: -15px;
+  }
+  .special-donut .priceText {
+    margin-top: -23px;
+    margin-left: 130%;
+    font-size: 1rem;
+  }
+  .special-donut .description {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: -15px;
+  }
+  .special-donut .donutName {
+    font-size: 1.1rem;
+    margin-left: 0;
+    margin-top: -15px;
+  }
+  .special-donut .price {
+    font-size: 1rem;
+    margin-left: 15%;
+    margin-top: -50px;
+  }
+  .special-donut .description {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .special-donut .donutDetails {
+    display: flex;
+    flex-direction: row;
+  }
+  .special-donut .donutAmount {
+    margin-left: 35%;
+    margin-top: -30px;
+  }
+  .special-donut .donutAmount .plus {
+    margin-left: 15px;
+  }
+  .special-donut .donutAmount .minus {
+    margin-left: 15px;
+  }
+  .donutGrid img {
+    margin-left: 4%;
+    width: auto;
+    height: 220px;
+  }
+  .donutGrid .donutName {
+    font-size: 1.1rem;
+  }
+  .donutGrid .description {
+    display: none;
+  }
+  .donutGrid .donutContent {
+    margin-left: 40%;
+    margin-top: -190px;
+  }
+  #cart {
+    margin-left: 3%;
+    font-family: "Jost", sans-serif;
+    padding-bottom: 20px;
+  }
+  #cart .donutName {
+    margin-left: 16%;
+    margin-top: -95px;
+  }
+  #cart .donutDetails {
+    margin-left: 16%;
+    margin-top: -15px;
+    font-size: 0.9rem;
+  }
+  #cart .priceText {
+    margin-top: -21px;
+    margin-left: 3.5%;
+  }
+  #cart .donutAmount {
+    margin-top: -5px;
+  }
+  .cartContainer #cartText {
+    margin-left: 3%;
+  }
+  .cartContainer #orderDonutsText {
+    margin-left: 3%;
+    padding-bottom: 20px;
+  }
+}
 /* ------------ Desktop layout -------------- */
 @media screen and (min-width: 1024px) {
   #gottfrid {
@@ -482,7 +597,7 @@
   }
   .special-donut .donutContent {
     margin-left: 30%;
-    margin-top: -280px;
+    margin-top: -350px;
     margin-right: 20%;
   }
   .special-donut .donutNameSpecial {
@@ -572,6 +687,27 @@
     margin-left: 15px;
   }
   /* Kassa och formulär */
+  #cart {
+    margin-left: 8%;
+    font-family: "Jost", sans-serif;
+    padding-bottom: 20px;
+  }
+  #cart .donutName {
+    margin-left: 10%;
+    margin-top: -95px;
+  }
+  #cart .donutDetails {
+    margin-left: 10%;
+    margin-top: -15px;
+    font-size: 0.9rem;
+  }
+  #cart .priceText {
+    margin-top: -21px;
+    margin-left: 2%;
+  }
+  #cart .donutAmount {
+    margin-top: -5px;
+  }
   .cartContainer {
     margin-left: 5%;
     margin-right: 5%;
@@ -687,22 +823,22 @@
   .cartContainer .cartOptions {
     margin-left: 5%;
   }
-  #cardCVV {
+  .cartContainer #cardCVV {
     width: 20%;
     margin-bottom: 10px;
   }
-  #cardDetails {
+  .cartContainer #cardDetails {
     display: none;
     margin-left: 0;
     margin-top: 10px;
     margin-right: 58%;
   }
-  #invoiceDetails {
+  .cartContainer #invoiceDetails {
     display: none;
     margin-left: 0;
     margin-right: 58%;
   }
-  .checkbox {
+  .cartContainer .checkbox {
     font-family: "Jost", sans-serif;
     font-size: 0.9rem;
   }
