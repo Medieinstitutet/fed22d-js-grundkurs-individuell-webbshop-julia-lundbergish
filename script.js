@@ -264,15 +264,16 @@ function checkInputs() {
   const codeValue = code.value.trim();
   const phoneValue = phone.value.trim();
   const emailValue = email.value.trim();
+  const socialSecurityValue = socialSecurity.value.trim();
 
   // Namn
 
   if(firstNameValue === '') {
-    // show error
-    // add error class
+    // Visa error
+    // Lägg till error class
     setErrorFor(firstName, 'Måste fyllas i');
   } else {
-    // add success class
+    // Lägg till success class
     setSuccessFor(firstName);
   }
 
@@ -330,6 +331,14 @@ function checkInputs() {
     setSuccessFor(email);
   }
 
+  if(socialSecurityValue === '') {
+    setErrorFor(socialSecurity, 'Måste fyllas i');
+  } else if(!isSocialSecurity(socialSecurityValue)) {
+    setErrorFor(socialSecurity, 'Personnumret är ogiltigt');
+  } else {
+    setSuccessFor(socialSecurity);
+  }
+
 }
 
 // Funktion för error och success
@@ -339,11 +348,12 @@ function setErrorFor(input, message) {
   const small = formControl.querySelector('small');
   formControl.classList.remove('success');
   formControl.classList.add('error');
+  small.classList.remove('toggle-hidden');
 
-  // error class
+  // Error class
   formControl.className = 'form-control error'; 
 
-  // felmeddelande i small-tagg
+  // Felmeddelande i small-tagg
   small.innerText = message;
 }
 
@@ -353,7 +363,7 @@ function setSuccessFor(input, message) {
   formControl.classList.add('success');
   formControl.classList.remove('error');
 
-  // rensa errormeddelande
+  // Rensa errormeddelande
   small.innerText = "";
 }
 
@@ -371,6 +381,10 @@ function isPhone(phone) {
   return /^07(0|2|3|6|9)\d{7}$/g.test(phone);
 }
 
+function isSocialSecurity(socialSecurity) {
+  return /^\d{6,8}[-|(\s)]{0,1}\d{4}$/.test(socialSecurity);
+}
+
 // Rensa formulär
 
 const clearFormBtn = document.querySelector('#clear');
@@ -385,11 +399,43 @@ function clearForm() {
   document.querySelector('small').classList.add('toggle-hidden');
 }
 
+// Kortbetalning
+
+
+
+// funktion för att nya formulärfält kommer när man klickar på kort eller faktura
+// if jag har valt kortbetalning > innerHTML för kortdetaljer
+// else if jag har valt faktura > innerHTML för faktura
+// if ingen av ovan - visa inte innerHTML
+
+
+
+const addCardForm = document.getElementById('cardDetails');
+const addInvoiceForm = document.getElementById('invoiceDetails')
+
+function handleRadioClick() {
+  if (document.getElementById('card').checked) {
+    cardDetails.style.display = 'block';
+  } else {
+    cardDetails.style.display = 'none';
+  }
+  if (document.getElementById('invoice').checked) {
+    invoiceDetails.style.display = 'block';
+  } else {
+    invoiceDetails.style.display = 'none';
+  }
+}
+
+const radioButtons = document.querySelectorAll('input[name="paymentOption"]');
+radioButtons.forEach(radio => {
+  radio.addEventListener('click', handleRadioClick);
+});
+
 
 
 // ---- FORMULÄR ----
-// Nya fält för kortbetalning och faktura 
-// Utgråad beställningsknapp när det är fel i formuläret
+// x Nya fält för kortbetalning och faktura 
+// (skippa) Utgråad beställningsknapp när det är fel i formuläret
 // x Knapp för att rensa beställning
 // x Fält för rabattkod
 
@@ -404,4 +450,6 @@ function clearForm() {
 // Publicera!!!!
 // Byt bilder på munkarna
 // Betyg på munkarna
-// Varför står det på github att jag använder CSS? 
+
+// class hidden på båda divar (display none), tryck på kort - ta bort class hidden på kortdiv och lägg på på faktura och vice versa
+// gör en loop med if sats som kollar om amount är större än 0 (glöm inte anropa funktionen)

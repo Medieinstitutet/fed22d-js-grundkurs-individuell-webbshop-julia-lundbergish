@@ -223,6 +223,123 @@
   }
 }
 
+.cartContainer{
+  margin-left: 2%;
+  margin-right: 2%;
+  background-color: #afddff;
+  padding: 5px;
+  #orderDonutsText{
+    font-family: 'Jost', sans-serif;
+    margin-left: 5%;
+  }
+  .header{
+    padding: 10px;
+}
+.form{
+  padding: 10px 15px;
+}
+
+.form-control{
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.form-control label{
+  display: inline-block;
+  margin-bottom: 5px;    
+  font-family: 'Jost', sans-serif;
+}
+.form-control input{
+  border: 1px solid black;
+  border-radius: 6px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-family: 'Jost', sans-serif;
+  font-size: 1rem;
+}
+.form-control.success input{
+  border-color: #2ecc71;
+}
+.form-control.error input{
+  border-color: #e74c3c;
+}
+.form-control i{
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  visibility: hidden;
+}
+.form-control.success i.fa-check-circle {
+  visibility: visible;
+  color: #2ecc71;
+}
+.form-control.error i.fa-exclamation-circle{
+  visibility: visible;
+  color: #e74c3c;
+}
+.form-control small{
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.form-control small{
+  visibility: visible;
+  color:#e74c3c;
+}
+.form button{
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  display: block;
+  font-size: 1rem;
+  font-family: 'Jost', sans-serif;
+  border-radius: 6px;
+  padding: 10px;
+  width: 100%;
+}
+.toggle-hidden{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+}
+.card-text, .invoice-text{
+  font-family: 'Jost', sans-serif;
+}
+.checkbox{
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+#orderButton{
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+#cardDetails{
+display: none;
+}
+#invoiceDetails{
+display:none;
+}
+.cardExpiration{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#cardCVV{
+  width: 30%;
+  margin-bottom: 10px;
+  padding-bottom: -5px;
+}
+
 /* ------------ Surfplatta layout -------------- */
 
 @media screen and (min-width: 850px) {
@@ -586,5 +703,17 @@
     clip: rect(0 0 0 0);
     overflow: hidden;
   }
+}
+
+#cardCVV{
+  width: 20%;
+  margin-bottom: 10px;
+}
+
+#cardDetails{
+  display: none;
+}
+#invoiceDetails{
+  display:none;
 }
 }
