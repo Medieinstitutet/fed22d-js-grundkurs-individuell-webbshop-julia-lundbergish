@@ -331,6 +331,8 @@ function checkInputs() {
     setSuccessFor(email);
   }
 
+  // Personnummer
+
   if(socialSecurityValue === '') {
     setErrorFor(socialSecurity, 'Måste fyllas i');
   } else if(!isSocialSecurity(socialSecurityValue)) {
@@ -399,16 +401,7 @@ function clearForm() {
   document.querySelector('small').classList.add('toggle-hidden');
 }
 
-// Kortbetalning
-
-
-
-// funktion för att nya formulärfält kommer när man klickar på kort eller faktura
-// if jag har valt kortbetalning > innerHTML för kortdetaljer
-// else if jag har valt faktura > innerHTML för faktura
-// if ingen av ovan - visa inte innerHTML
-
-
+// Kortbetalning och faktura
 
 const addCardForm = document.getElementById('cardDetails');
 const addInvoiceForm = document.getElementById('invoiceDetails')
@@ -431,13 +424,17 @@ radioButtons.forEach(radio => {
   radio.addEventListener('click', handleRadioClick);
 });
 
+// Varukorg
 
+// vid klick av plusknapp - munk hamnar i varukorgen
+// summan uppdateras 
 
 // ---- FORMULÄR ----
 // x Nya fält för kortbetalning och faktura 
 // (skippa) Utgråad beställningsknapp när det är fel i formuläret
-// x Knapp för att rensa beställning
+// x Knapp för att rensa beställning och order
 // x Fält för rabattkod
+// Timer som rensar formulär
 
 // ---- VARUKORG ----
 // Visuell feedback på att varukorgen uppdateras
@@ -451,5 +448,4 @@ radioButtons.forEach(radio => {
 // Byt bilder på munkarna
 // Betyg på munkarna
 
-// class hidden på båda divar (display none), tryck på kort - ta bort class hidden på kortdiv och lägg på på faktura och vice versa
 // gör en loop med if sats som kollar om amount är större än 0 (glöm inte anropa funktionen)

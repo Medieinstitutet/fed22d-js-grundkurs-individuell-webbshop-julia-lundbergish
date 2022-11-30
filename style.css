@@ -162,6 +162,33 @@
   padding-bottom: 30px;
   font-family: "Jost", sans-serif;
 }
+.donutGrid:nth-of-type(2) button {
+  background-color: #FFCAE3;
+}
+.donutGrid:nth-of-type(3) button {
+  background-color: #FFF8BA;
+}
+.donutGrid:nth-of-type(4) button {
+  background-color: #D4FDD3;
+}
+.donutGrid:nth-of-type(5) button {
+  background-color: #afddff;
+}
+.donutGrid:nth-of-type(6) button {
+  background-color: #FFCAE3;
+}
+.donutGrid:nth-of-type(7) button {
+  background-color: #FFF8BA;
+}
+.donutGrid:nth-of-type(8) button {
+  background-color: #D4FDD3;
+}
+.donutGrid:nth-of-type(9) button {
+  background-color: #afddff;
+}
+.donutGrid:nth-of-type(10) button {
+  background-color: #FFCAE3;
+}
 .donutGrid img {
   width: 140px;
   height: auto;
@@ -214,6 +241,28 @@
 .donutGrid .amount,
 .donutGrid .sum {
   font-size: 0.9rem;
+}
+
+#cart {
+  margin-left: 5%;
+  font-family: "Jost", sans-serif;
+  padding-bottom: 20px;
+}
+#cart .donutName {
+  margin-left: 35%;
+  margin-top: -95px;
+}
+#cart .donutDetails {
+  margin-left: 35%;
+  margin-top: -15px;
+  font-size: 0.9rem;
+}
+#cart .priceText {
+  margin-top: -21px;
+  margin-left: 9%;
+}
+#cart .donutAmount {
+  margin-top: -5px;
 }
 
 .cartContainer {
@@ -484,33 +533,6 @@
     padding-bottom: 80px;
     font-family: "Jost", sans-serif;
   }
-  .donutGrid:nth-of-type(2) button {
-    background-color: #FFCAE3;
-  }
-  .donutGrid:nth-of-type(3) button {
-    background-color: #FFF8BA;
-  }
-  .donutGrid:nth-of-type(4) button {
-    background-color: #D4FDD3;
-  }
-  .donutGrid:nth-of-type(5) button {
-    background-color: #afddff;
-  }
-  .donutGrid:nth-of-type(6) button {
-    background-color: #FFCAE3;
-  }
-  .donutGrid:nth-of-type(7) button {
-    background-color: #FFF8BA;
-  }
-  .donutGrid:nth-of-type(8) button {
-    background-color: #D4FDD3;
-  }
-  .donutGrid:nth-of-type(9) button {
-    background-color: #afddff;
-  }
-  .donutGrid:nth-of-type(10) button {
-    background-color: #FFCAE3;
-  }
   .donutGrid img {
     width: auto;
     height: 300px;
@@ -551,10 +573,11 @@
   }
   /* Kassa och formulär */
   .cartContainer {
-    margin-left: 35%;
-    margin-right: 30%;
-    background-color: #afddff;
+    margin-left: 5%;
+    margin-right: 5%;
     padding: 20px;
+    border-radius: 10px;
+    background-color: #afddff;
   }
   .cartContainer #orderDonutsText {
     font-family: "Jost", sans-serif;
@@ -565,10 +588,23 @@
   .cartContainer .form {
     padding: 30px 40px;
   }
+  .cartContainer .column1 {
+    margin-right: 50%;
+  }
+  .cartContainer .column2 {
+    margin-left: 45%;
+    margin-top: -411px;
+  }
   .cartContainer .form-control {
+    margin-left: 10%;
+    margin-right: 10%;
     margin-bottom: 10px;
     padding-bottom: 20px;
     position: relative;
+  }
+  .cartContainer .discount {
+    margin-left: 5%;
+    margin-right: 55%;
   }
   .cartContainer .form-control label {
     display: inline-block;
@@ -576,6 +612,8 @@
     font-family: "Jost", sans-serif;
   }
   .cartContainer .form-control input {
+    display: grid;
+    grid-template-columns: 40% 40%;
     border: 1px solid black;
     border-radius: 6px;
     display: block;
@@ -623,7 +661,15 @@
     font-family: "Jost", sans-serif;
     border-radius: 6px;
     padding: 10px;
-    width: 100%;
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 10px;
+  }
+  .cartContainer .form button:hover {
+    background-color: #D4FDD3;
+  }
+  .cartContainer #clear:hover {
+    background-color: #FFCAE3;
   }
   .cartContainer .toggle-hidden {
     position: absolute;
@@ -638,14 +684,26 @@
     clip: rect(0 0 0 0);
     overflow: hidden;
   }
+  .cartContainer .cartOptions {
+    margin-left: 5%;
+  }
   #cardCVV {
     width: 20%;
     margin-bottom: 10px;
   }
   #cardDetails {
     display: none;
+    margin-left: 0;
+    margin-top: 10px;
+    margin-right: 58%;
   }
   #invoiceDetails {
     display: none;
+    margin-left: 0;
+    margin-right: 58%;
+  }
+  .checkbox {
+    font-family: "Jost", sans-serif;
+    font-size: 0.9rem;
   }
 }/*# sourceMappingURL=style.css.map */

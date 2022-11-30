@@ -57,23 +57,25 @@
                     <div class="donutContent">
                         <h2 class="donutNameSpecial">Månadens donut</h2>
                         <h3 class="donutName">Caramel Crisp</h2>
-                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil aperiam, optio
-                            ullam alias dolore maiores necessitatibus sit dolor molestiae tenetur cum.
-                            <br><br>
-                            Odio quasi magnam nobis debitis unde incidunt. Commodi laborum velit.
-                        </p>
-                        <!-- Rating icons -->
-                        <div class="donutDetails">
-                            <div class="donutPrice">
-                                <span><span class="price">22</span><p class="priceText"> kr</p>
+                            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+                                aperiam, optio
+                                ullam alias dolore maiores necessitatibus sit dolor molestiae tenetur cum.
+                                <br><br>
+                                Odio quasi magnam nobis debitis unde incidunt. Commodi laborum velit.
+                            </p>
+                            <!-- Rating icons -->
+                            <div class="donutDetails">
+                                <div class="donutPrice">
+                                    <span><span class="price">22</span>
+                                        <p class="priceText"> kr</p>
+                                </div>
+                                <div class="donutAmount">
+                                    <span class="amount">0</span> st
+                                    <span class="sum">0 kr</span>
+                                    <button class="minus" data-operator="minus">-</button>
+                                    <button class="plus" data-operator="plus">+</button>
+                                </div>
                             </div>
-                            <div class="donutAmount">
-                                <span class="amount">0</span> st
-                                <span class="sum">0 kr</span>
-                                <button class="minus" data-operator="minus">-</button>
-                                <button class="plus" data-operator="plus">+</button>
-                            </div>
-                        </div>
                     </div>
                 </article>
                 <!-- Donut grid -->
@@ -81,18 +83,19 @@
                     <img src="images/special-donut.png" alt="" height="240">
                     <div class="donutContent">
                         <h3 class="donutName">Caramel Crisp</h2>
-                        <!-- Rating icons -->
-                        <div class="donutDetails">
-                            <div class="donutPrice">
-                                <span><span class="price">16</span><p class="priceText"> kr</p>
+                            <!-- Rating icons -->
+                            <div class="donutDetails">
+                                <div class="donutPrice">
+                                    <span><span class="price">16</span>
+                                        <p class="priceText"> kr</p>
+                                </div>
+                                <div class="donutAmount">
+                                    <span class="amount">0</span> st
+                                    <span class="sum">0 kr</span>
+                                    <button class="minus" data-operator="minus">-</button>
+                                    <button class="plus" data-operator="plus">+</button>
+                                </div>
                             </div>
-                            <div class="donutAmount">
-                                <span class="amount">0</span> st
-                                <span class="sum">0 kr</span>
-                                <button class="minus" data-operator="minus">-</button>
-                                <button class="plus" data-operator="plus">+</button>
-                            </div>
-                        </div>
                     </div>
                 </article>
             </div>
@@ -103,7 +106,24 @@
             <div class="cartHeader">
                 <h3 id="orderDonutsText">Beställ munkar</h3>
             </div>
+            <div id="cart">
+                <img src="images/special-donut.png" alt="" height="90">
+                <h4 class="donutName">Caramel Crisp</h2>
+                    <div class="donutDetails">
+                        <div class="donutPrice">
+                            <span><span class="price">22</span>
+                                <p class="priceText"> kr</p>
+                        </div>
+                        <div class="donutAmount">
+                            <span class="amount">0</span> st
+                            <span class="sum">0 kr</span>
+                            <button class="minus" data-operator="minus">-</button>
+                            <button class="plus" data-operator="plus">+</button>
+                        </div>
+                    </div>
+            </div>
             <form class="form" id="form">
+                <div class="column1">
                 <div class="form-control">
                     <label for="">Förnamn</label>
                     <input type="text" placeholder="Förnamn" id="firstName">
@@ -132,6 +152,8 @@
                     <i class="fas fa-exclamation-circle"></i>
                     <small class="toggle-hidden"></small>
                 </div>
+                </div>
+                <div class="column2">
                 <div class="form-control">
                     <label for="">Postort</label>
                     <input type="text" placeholder="Postort" id="city">
@@ -160,73 +182,77 @@
                     <i class="fas fa-exclamation-circle"></i>
                     <small class="toggle-hidden"></small>
                 </div>
+            </div>
                 <div class="form-control discount">
                     <label for="">Rabattkod</label>
                     <input type="text" placeholder="Rabattkod" id="discount">
                 </div>
-            <input type="radio" id="card" name="paymentOption" value="card">
+                <div class="cartOptions">
+                <input type="radio" id="card" name="paymentOption" value="card">
                 <label class="card-text" for="paymentOption1">Kort</label>
                 <input type="radio" id="invoice" name="paymentOption" value="invoice">
                 <label class="invoice-text" for="paymentOption2">Faktura</label>
                 <div class="form-control" id="cardDetails">
-                <label>Kortnummer</label>
+                    <label>Kortnummer</label>
                     <input type="text" placeholder="Kortnummer" id="cardNumber">
                     <div class="cardExpiration">
-                    <label>Utgångsdatum</label>
-                    <select id="cardMonth">
-                    <option selected disabled="">Månad</option>
-                    <option value="m01">01</option>
-                    <option value="m02">02</option>
-                    <option value="m03">03</option>
-                    <option value="m04">04</option>
-                    <option value="m05">05</option>
-                    <option value="m06">06</option>
-                    <option value="m07">07</option>
-                    <option value="m08">08</option>
-                    <option value="m09">09</option>
-                    <option value="m10">10</option>
-                    <option value="m11">11</option>
-                    <option value="m12">12</option>
-                    </select>
-                    <select id="cardYear">
-                    <option selected disabled="">År</option>
-                    <option value="y22">22</option>
-                    <option value="y23">23</option>
-                    <option value="y24">24</option>
-                    <option value="y25">25</option>
-                    <option value="y26">26</option>
-                    <option value="y27">27</option>
-                    <option value="y28">28</option>
-                    <option value="y29">29</option>
-                    </select>
-                  </label>
+                        <label>Utgångsdatum</label>
+                        <select id="cardMonth">
+                            <option selected disabled="">Månad</option>
+                            <option value="m01">01</option>
+                            <option value="m02">02</option>
+                            <option value="m03">03</option>
+                            <option value="m04">04</option>
+                            <option value="m05">05</option>
+                            <option value="m06">06</option>
+                            <option value="m07">07</option>
+                            <option value="m08">08</option>
+                            <option value="m09">09</option>
+                            <option value="m10">10</option>
+                            <option value="m11">11</option>
+                            <option value="m12">12</option>
+                        </select>
+                        <select id="cardYear">
+                            <option selected disabled="">År</option>
+                            <option value="y22">22</option>
+                            <option value="y23">23</option>
+                            <option value="y24">24</option>
+                            <option value="y25">25</option>
+                            <option value="y26">26</option>
+                            <option value="y27">27</option>
+                            <option value="y28">28</option>
+                            <option value="y29">29</option>
+                        </select>
+                        </label>
+                    </div>
+                    <label>CVV</label>
+                    <input type="text" placeholder="CVV" id="cardCVV">
+                    <label>Namn på kortinnehavare:</label>
+                    <input type="text" placeholder="Namn" id="cardOwner">
                 </div>
-                  <label>CVV</label>
-                  <input type="text" placeholder="CVV" id="cardCVV">
-                  <label>Namn på kortinnehavare:</label>
-                  <input type="text" placeholder="Namn" id="cardOwner">
-                  </div>
-                  <div class="form-control" id="invoiceDetails">
+                <div class="form-control" id="invoiceDetails">
                     <label for="">Personnummer</label>
                     <input type="text" placeholder="Personnummer" id="socialSecurity">
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                     <small class="toggle-hidden"></small>
-                  </div>
-                  <div class="checkbox">
-                <input type="checkbox" id="personalDetails" name="personuppgifter">
-          <label for="personalDetails">Jag godkänner att mina personuppgifter behandlas</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="personalDetails" name="personuppgifter">
+                    <label for="personalDetails">Jag godkänner att mina personuppgifter behandlas</label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="newsLetter" name="newsLetter">
+                    <label for="newsLetter">Jag vill prenumerera på nyhetsbrevet</label>
+                </div>
+            </div>
+                <button id="orderButton">Beställ</button>
+                <button id="clear" type="reset">Rensa</button>
         </div>
-        <div class="checkbox">
-          <input type="checkbox" id="newsLetter" name="newsLetter">
-          <label for="newsLetter">Jag vill prenumerera på nyhetsbrevet</label>
+        </form>
         </div>
-          <button id="orderButton">Beställ</button>
-          <button id="clear" type="reset">Rensa</button>
-        </div>
-    </form>
-    </div>
     </main>
     <script src="script.js"></script>
 </body>
+
 </html>
