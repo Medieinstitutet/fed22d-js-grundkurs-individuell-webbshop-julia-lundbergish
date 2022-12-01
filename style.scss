@@ -4,8 +4,6 @@
 
 #gottfrid {
   display: none;
-
-  /* Hjälper detta ändå vid SEO eller tänker jag snett? */
 }
 
 .navlink {
@@ -14,7 +12,6 @@
 
 .logo {
   height: 60px;
-  /* Annat sätt att minska storleken på bilden i mobilformat? Den blir lite suddig.. */
   margin-top: 20px;
   margin-left: 2%;
 }
@@ -108,33 +105,41 @@
     margin-right: 80px;
     display: inline;
   }
+
   .donutNameSpecial {
     font-size: 1.2rem;
     margin-left: 10%;
   }
+
   .donutName {
     font-size: 1rem;
     margin-left: 10%;
     margin-top: -15px;
   }
+
   .description {
     display: none;
   }
+
   .donutContent {
     margin-left: 40%;
     margin-top: -155px;
   }
+
   .donutDetails {
     display: flex;
     justify-content: space-between;
   }
+
   .price {
     margin-left: 100%;
   }
+
   .priceText{
     margin-left: 230%;
     margin-top: -23px;
   }
+
   .minus {
     height: 35px;
     width: 35px;
@@ -145,6 +150,7 @@
     margin-top: 35px;
     margin-left: 10px;
   }
+
   .plus {
     height: 35px;
     width: 35px;
@@ -155,6 +161,7 @@
     margin-left: 10px;
     margin-right: 10px;
   }
+
   .amount,
   .sum {
     font-size: 0.9rem;
@@ -167,80 +174,97 @@
   padding-top: 30px;
   padding-bottom: 30px;
   font-family: "Jost", sans-serif;
-  &:nth-of-type(2){
-    button{
+
+  &:nth-of-type(2) {
+  button {
       background-color: #FFCAE3;
     }
   }
-  &:nth-of-type(3){
-    button{
+
+  &:nth-of-type(3) {
+  button {
       background-color: #FFF8BA;
+    }
   }
-}
-&:nth-of-type(4){
-  button{
-    background-color: #D4FDD3;
-}
-}
-&:nth-of-type(5){
-  button{
-    background-color: #afddff;
+
+  &:nth-of-type(4) {
+  button {
+      background-color: #D4FDD3;
+    }
   }
-}
-&:nth-of-type(6){
-  button{
-    background-color: #FFCAE3;
-}
-}
-&:nth-of-type(7){
-button{
-  background-color: #FFF8BA;
-}
-}
-&:nth-of-type(8){
-  button{
-    background-color: #D4FDD3;
+
+  &:nth-of-type(5) {
+  button {
+      background-color: #afddff;
+    }
   }
-}
-&:nth-of-type(9){
-  button{
-    background-color: #afddff;
-}
-}
-&:nth-of-type(10){
-  button{
-    background-color: #FFCAE3;
-}
-}
+
+  &:nth-of-type(6) {
+  button {
+      background-color: #FFCAE3;
+    }
+  }
+
+  &:nth-of-type(7) {
+  button {
+      background-color: #FFF8BA;
+    }
+  }
+
+  &:nth-of-type(8) {
+  button {
+      background-color: #D4FDD3;
+    }
+  }
+
+  &:nth-of-type(9) {
+  button {
+      background-color: #afddff;
+    }
+  }
+
+  &:nth-of-type(10) {
+  button {
+      background-color: #FFCAE3;
+    }
+  }
+
   img {
     width: 140px;
     height: auto;
     margin-right: 80px;
     display: inline;
   }
+
   .donutName {
     font-size: 1rem;
     margin-left: 0%;
     font-family: "Jost", sans-serif;
   }
+
   .description {
     display: none;
   }
+
   .donutContent {
     margin-left: 45.5%;
     margin-top: -155px;
   }
+
   .donutDetails {
     display: flex;
     justify-content: space-between;
   }
+
   .price {
     margin-left: 0%;
   }
-  .priceText{
+
+  .priceText {
     margin-top: -23px;
     margin-left: 260%;
   }
+
   .minus {
     height: 35px;
     width: 35px;
@@ -251,6 +275,7 @@ button{
     margin-top: 35px;
     margin-left: 10px;
   }
+
   .plus {
     height: 35px;
     width: 35px;
@@ -261,6 +286,7 @@ button{
     margin-left: 10px;
     margin-right: 10px;
   }
+
   .amount,
   .sum {
     font-size: 0.9rem;
@@ -289,123 +315,146 @@ button{
   }
 }
 
-.cartContainer{
+.cartContainer {
   margin-left: 2%;
   margin-right: 2%;
   background-color: #afddff;
   padding: 5px;
-  #cartText{
+
+  #cartText {
     font-family: 'Jost', sans-serif;
     margin-left: 8%;
   }
-  #orderDonutsText{
+
+  #orderDonutsText {
     font-family: 'Jost', sans-serif;
     margin-left: 8%;
     margin-bottom: -15px;
   }
-  .header{
+
+  .header {
     padding: 10px;
-}
-.form{
-  padding: 10px 15px;
+  }
+
+  .form {
+    padding: 10px 15px;
+  }
+
+  .form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+
+  .form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-family: 'Jost', sans-serif;
+  }
+
+  .form-control input {
+    border: 1px solid black;
+    border-radius: 6px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+  }
+
+  .form-control.success input {
+    border-color: #2ecc71;
+  }
+
+  .form-control.error input {
+    border-color: #e74c3c;
+  }
+
+  .form-control i {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    visibility: hidden;
+  }
+
+  .form-control.success i.fa-check-circle {
+    visibility: visible;
+    color: #2ecc71;
+  }
+
+  .form-control.error i.fa-exclamation-circle {
+    visibility: visible;
+    color: #e74c3c;
+  }
+
+  .form-control small {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .form-control small {
+    visibility: visible;
+    color: #e74c3c;
+  }
+
+  .form button {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    display: block;
+    font-size: 1rem;
+    font-family: 'Jost', sans-serif;
+    border-radius: 6px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .toggle-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
 }
 
-.form-control{
-  margin-bottom: 10px;
-  padding-bottom: 20px;
-  position: relative;
-}
-.form-control label{
-  display: inline-block;
-  margin-bottom: 5px;    
+.card-text,
+.invoice-text {
   font-family: 'Jost', sans-serif;
 }
-.form-control input{
-  border: 1px solid black;
-  border-radius: 6px;
-  display: block;
-  width: 100%;
-  padding: 10px;
-  font-family: 'Jost', sans-serif;
-  font-size: 1rem;
-}
-.form-control.success input{
-  border-color: #2ecc71;
-}
-.form-control.error input{
-  border-color: #e74c3c;
-}
-.form-control i{
-  position: absolute;
-  top: 40px;
-  right: 10px;
-  visibility: hidden;
-}
-.form-control.success i.fa-check-circle {
-  visibility: visible;
-  color: #2ecc71;
-}
-.form-control.error i.fa-exclamation-circle{
-  visibility: visible;
-  color: #e74c3c;
-}
-.form-control small{
-  visibility: hidden;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-.form-control small{
-  visibility: visible;
-  color:#e74c3c;
-}
-.form button{
-  background-color: white;
-  color: black;
-  border: 1px solid black;
-  display: block;
-  font-size: 1rem;
-  font-family: 'Jost', sans-serif;
-  border-radius: 6px;
-  padding: 10px;
-  width: 100%;
-}
-.toggle-hidden{
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-}
-.card-text, .invoice-text{
-  font-family: 'Jost', sans-serif;
-}
-.checkbox{
+
+.checkbox {
   display: block;
   margin-top: 10px;
   margin-bottom: 15px;
 }
-#orderButton{
+
+#orderButton {
   margin-top: 30px;
   margin-bottom: 10px;
 }
-#cardDetails{
-display: none;
+
+#cardDetails {
+  display: none;
 }
-#invoiceDetails{
-display:none;
+
+#invoiceDetails {
+  display: none;
 }
-.cardExpiration{
+
+.cardExpiration {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-#cardCVV{
+
+#cardCVV {
   width: 30%;
   margin-bottom: 10px;
   padding-bottom: -5px;
@@ -546,7 +595,7 @@ display:none;
 /* ------------ Desktop layout -------------- */
 
 @media screen and (min-width: 1024px) {
-  #gottfrid {
+#gottfrid {
     display: none;
   }
 
@@ -581,6 +630,7 @@ display:none;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
     a {
       color: black;
     }
@@ -598,10 +648,12 @@ display:none;
     display: flex;
     font-family: "Jost", sans-serif;
     font-weight: lighter;
+
     a {
       color: black;
       text-decoration: none;
     }
+
     a:hover {
       color: grey;
       text-decoration: none;
@@ -665,11 +717,11 @@ display:none;
       margin-left: -20px;
     }
 
-    .priceText{
+    .priceText {
       margin-top: -28px;
       margin-left: 130%;
       font-size: 1.2rem;
-    }  
+    }
 
     .description {
       display: block;
@@ -710,213 +762,245 @@ display:none;
 
   /* Munkar */
 
-  .donutGrid{
+  .donutGrid {
     padding-top: 80px;
     padding-bottom: 80px;
     font-family: 'Jost', sans-serif;
+
     img {
-        width: auto;
-        height: 300px;
-        margin-right: 80px;
-        display: inline;
-        margin-left: 12%;
+      width: auto;
+      height: 300px;
+      margin-right: 80px;
+      display: inline;
+      margin-left: 12%;
+    }
+
+    .donutContent {
+
+      margin-top: 30px;
+      margin-left: 12%;
+    }
+
+    .donutName {
+      font-size: 1.2rem;
+      margin-left: 0;
+      margin-top: -10px;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      margin-left: 0%;
+    }
+
+    .priceText {
+      margin-left: 130%;
+      margin-top: -28px;
+      font-size: 1.2rem;
+    }
+
+    .donutDetails {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .donutAmount {
+      margin-right: 24%;
+
+      .plus {
+        margin-left: 15px;
       }
-      .donutContent {
-        
-        margin-top: 30px;
-        margin-left: 12%;
+
+      .minus {
+        margin-left: 15px;
       }
-  
-      .donutName {
-        font-size: 1.2rem;
-        margin-left: 0;
-        margin-top: -10px;
-      }
-  
-      .price {
-        font-size: 1.2rem;
-        margin-left: 0%;
-      }
-      .priceText{
-        margin-left: 130%;
-        margin-top: -28px;
-        font-size: 1.2rem;
-      }
-  
-      .donutDetails {
-        display: flex;
-        flex-direction: row;
-      }
-  
-      .donutAmount {
-        margin-right: 24%;
-  
-        .plus {
-          margin-left: 15px;
-        }
-  
-        .minus {
-          margin-left: 15px;
-        }
-      }
+    }
   }
 
   /* Kassa och formulär */
 
-  #cart{
+  #cart {
     margin-left: 8%;
     font-family: 'Jost', sans-serif;
     padding-bottom: 20px;
-    .donutName{
+
+    .donutName {
       margin-left: 10%;
       margin-top: -95px;
     }
-    .donutDetails{
+
+    .donutDetails {
       margin-left: 10%;
       margin-top: -15px;
       font-size: 0.9rem;
     }
+
     .priceText {
       margin-top: -21px;
       margin-left: 2%;
     }
-    .donutAmount{
+
+    .donutAmount {
       margin-top: -5px;
     }
   }
 
-  .cartContainer{
+  .cartContainer {
     margin-left: 5%;
     margin-right: 5%;
     padding: 20px;
     border-radius: 10px;
     background-color: #afddff;
-    #orderDonutsText{
+
+    #orderDonutsText {
       font-family: 'Jost', sans-serif;
     }
-    .header{
+
+    .header {
       padding: 20px;
+    }
+
+    .form {
+      padding: 30px 40px;
+    }
+
+    .column1 {
+      margin-right: 50%;
+    }
+
+    .column2 {
+      margin-left: 45%;
+      margin-top: -411px;
+    }
+
+    .form-control {
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-bottom: 10px;
+      padding-bottom: 20px;
+      position: relative;
+    }
+
+    .discount {
+      margin-left: 5%;
+      margin-right: 55%;
+    }
+
+    .form-control label {
+      display: inline-block;
+      margin-bottom: 5px;
+      font-family: 'Jost', sans-serif;
+    }
+
+    .form-control input {
+      display: grid;
+      grid-template-columns: 40% 40%;
+      border: 1px solid black;
+      border-radius: 6px;
+      display: block;
+      width: 100%;
+      padding: 10px;
+      font-family: 'Jost', sans-serif;
+      font-size: 1rem;
+    }
+
+    .form-control.success input {
+      border-color: #2ecc71;
+    }
+
+    .form-control.error input {
+      border-color: #e74c3c;
+    }
+
+    .form-control i {
+      position: absolute;
+      top: 40px;
+      right: 10px;
+      visibility: hidden;
+    }
+
+    .form-control.success i.fa-check-circle {
+      visibility: visible;
+      color: #2ecc71;
+    }
+
+    .form-control.error i.fa-exclamation-circle {
+      visibility: visible;
+      color: #e74c3c;
+    }
+
+    .form-control small {
+      visibility: hidden;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    .form-control small {
+      visibility: visible;
+      color: #e74c3c;
+    }
+
+    .form button {
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+      display: block;
+      font-size: 1rem;
+      font-family: 'Jost', sans-serif;
+      border-radius: 6px;
+      padding: 10px;
+      width: 30%;
+      margin-left: 35%;
+      margin-top: 10px;
+    }
+
+    .form button:hover {
+      background-color: #D4FDD3;
+    }
+
+    #clear:hover {
+      background-color: #FFCAE3;
+    }
+
+    .toggle-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      white-space: nowrap;
+      clip-path: inset(100%);
+      clip: rect(0 0 0 0);
+      overflow: hidden;
+    }
+
+    .cartOptions {
+      margin-left: 5%;
+    }
+
+    #cardCVV {
+      width: 20%;
+      margin-bottom: 10px;
+    }
+
+    #cardDetails {
+      display: none;
+      margin-left: 0;
+      margin-top: 10px;
+      margin-right: 58%;
+    }
+
+    #invoiceDetails {
+      display: none;
+      margin-left: 0;
+      margin-right: 58%;
+    }
+
+    .checkbox {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+    }
   }
-  .form{
-    padding: 30px 40px;
-  }
-  .column1{
-    margin-right: 50%;
-  }
-  .column2{
-    margin-left: 45%;
-    margin-top: -411px;
-  }
-  .form-control{
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-    position: relative;
-  }
-  .discount{
-    margin-left: 5%;
-    margin-right: 55%;
-  }
-  .form-control label{
-    display: inline-block;
-    margin-bottom: 5px;    
-    font-family: 'Jost', sans-serif;
-  }
-  .form-control input{
-    display: grid;
-    grid-template-columns: 40% 40%;
-    border: 1px solid black;
-    border-radius: 6px;
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-family: 'Jost', sans-serif;
-    font-size: 1rem;
-  }
-  .form-control.success input{
-    border-color: #2ecc71;
-  }
-  .form-control.error input{
-    border-color: #e74c3c;
-  }
-  .form-control i{
-    position: absolute;
-    top: 40px;
-    right: 10px;
-    visibility: hidden;
-  }
-  .form-control.success i.fa-check-circle {
-    visibility: visible;
-    color: #2ecc71;
-  }
-  .form-control.error i.fa-exclamation-circle{
-    visibility: visible;
-    color: #e74c3c;
-  }
-  .form-control small{
-    visibility: hidden;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-  .form-control small{
-    visibility: visible;
-    color:#e74c3c;
-  }
-  .form button{
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-    display: block;
-    font-size: 1rem;
-    font-family: 'Jost', sans-serif;
-    border-radius: 6px;
-    padding: 10px;
-    width: 30%;
-    margin-left: 35%;
-    margin-top: 10px;
-  }
-  .form button:hover{
-    background-color: #D4FDD3;
-  }
-  #clear:hover{
-    background-color: #FFCAE3;
-  }
-  .toggle-hidden{
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-  }
-  .cartOptions{
-    margin-left: 5%;
-  }
-  #cardCVV{
-    width: 20%;
-    margin-bottom: 10px;
-  }
-  #cardDetails{
-    display: none;
-    margin-left: 0;
-    margin-top: 10px;
-    margin-right: 58%;
-  }
-  #invoiceDetails{
-    display:none;
-    margin-left: 0;
-    margin-right: 58%;
-  }
-  .checkbox{
-    font-family: 'Jost', sans-serif;
-    font-size: 0.9rem;
-  }
-}
 
 }

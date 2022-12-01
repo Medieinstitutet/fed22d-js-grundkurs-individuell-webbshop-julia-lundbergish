@@ -23,7 +23,7 @@
             <ul class="navlink">
                 <li><a href="#">Om Oss</a></li>
                 <li><a href="#">Kontakt</a></li>
-                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a aria-label="Varukorg" href="#"><i aria-hidden="true" class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
             <button class="nav-button">
                 <span></span>
@@ -46,7 +46,7 @@
             <div id="filterDropdown" class="dropdown-content">
                 <a href="#">Populära</a>
                 <a href="#">A-Z</a>
-                <a href="#">Pris</a>
+                <a id="priceSort" href="#">Pris</a>
             </div>
         </div>
         <!-- Special donut -->
@@ -123,137 +123,137 @@
                     </div>
             </div>
             <h3 id="orderDonutsText">Beställ</h3>
-
+        
             <form class="form" id="form">
                 <div class="column1">
-                <div class="form-control">
-                    <label for="">Förnamn</label>
-                    <input type="text" placeholder="Förnamn" id="firstName">
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small class="toggle-hidden"></small>
-                </div>
-                <div class="form-control">
-                    <label for="">Efternamn</label>
-                    <input type="text" placeholder="Efternamn" id="lastName">
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small class="toggle-hidden"></small>
-                </div>
-                <div class="form-control">
-                    <label for="">Adress</label>
-                    <input type="text" placeholder="Gatuadress" id="street">
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small class="toggle-hidden"></small>
-                </div>
-                <div class="form-control">
-                    <label for="">Postnummer</label>
-                    <input type="text" placeholder="Postnummer" id="zipCode" pattern="[0-9]+">
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small class="toggle-hidden"></small>
-                </div>
+                    <div class="form-control">
+                        <label for="">Förnamn</label>
+                        <input type="text" placeholder="Förnamn" id="firstName">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="">Efternamn</label>
+                        <input type="text" placeholder="Efternamn" id="lastName">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="">Adress</label>
+                        <input type="text" placeholder="Gatuadress" id="street">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="">Postnummer</label>
+                        <input type="text" placeholder="Postnummer" id="zipCode" pattern="[0-9]+">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
                 </div>
                 <div class="column2">
-                <div class="form-control">
-                    <label for="">Postort</label>
-                    <input type="text" placeholder="Postort" id="city">
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small class="toggle-hidden"></small>
+                    <div class="form-control">
+                        <label for="">Postort</label>
+                        <input type="text" placeholder="Postort" id="city">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="">Portkod</label>
+                        <input type="text" placeholder="Portkod" id="code" pattern="[0-9]+">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="">Telefonnummer</label>
+                        <input type="tel" placeholder="Telefonnummer" id="phone">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="">E-postadress</label>
+                        <input type="email" placeholder="E-postadress" id="email">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
                 </div>
-                <div class="form-control">
-                    <label for="">Portkod</label>
-                    <input type="text" placeholder="Portkod" id="code" pattern="[0-9]+">
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small class="toggle-hidden"></small>
-                </div>
-                <div class="form-control">
-                    <label for="">Telefonnummer</label>
-                    <input type="tel" placeholder="Telefonnummer" id="phone">
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small class="toggle-hidden"></small>
-                </div>
-                <div class="form-control">
-                    <label for="">E-postadress</label>
-                    <input type="email" placeholder="E-postadress" id="email">
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small class="toggle-hidden"></small>
-                </div>
-            </div>
                 <div class="form-control discount">
                     <label for="">Rabattkod</label>
                     <input type="text" placeholder="Rabattkod" id="discount">
                 </div>
                 <div class="cartOptions">
-                <input type="radio" id="card" name="paymentOption" value="card">
-                <label class="card-text" for="paymentOption1">Kort</label>
-                <input type="radio" id="invoice" name="paymentOption" value="invoice">
-                <label class="invoice-text" for="paymentOption2">Faktura</label>
-                <div class="form-control" id="cardDetails">
-                    <label>Kortnummer</label>
-                    <input type="text" placeholder="Kortnummer" id="cardNumber">
-                    <div class="cardExpiration">
-                        <label>Utgångsdatum</label>
-                        <select id="cardMonth">
-                            <option selected disabled="">Månad</option>
-                            <option value="m01">01</option>
-                            <option value="m02">02</option>
-                            <option value="m03">03</option>
-                            <option value="m04">04</option>
-                            <option value="m05">05</option>
-                            <option value="m06">06</option>
-                            <option value="m07">07</option>
-                            <option value="m08">08</option>
-                            <option value="m09">09</option>
-                            <option value="m10">10</option>
-                            <option value="m11">11</option>
-                            <option value="m12">12</option>
-                        </select>
-                        <select id="cardYear">
-                            <option selected disabled="">År</option>
-                            <option value="y22">22</option>
-                            <option value="y23">23</option>
-                            <option value="y24">24</option>
-                            <option value="y25">25</option>
-                            <option value="y26">26</option>
-                            <option value="y27">27</option>
-                            <option value="y28">28</option>
-                            <option value="y29">29</option>
-                        </select>
-                        </label>
+                    <input type="radio" id="card" name="paymentOption" value="card">
+                    <label class="card-text" for="paymentOption1">Kort</label>
+                    <input type="radio" id="invoice" name="paymentOption" value="invoice">
+                    <label class="invoice-text" for="paymentOption2">Faktura</label>
+                    <div class="form-control" id="cardDetails">
+                        <label>Kortnummer</label>
+                        <input type="text" placeholder="Kortnummer" id="cardNumber">
+                        <div class="cardExpiration">
+                            <label>Utgångsdatum</label>
+                            <select id="cardMonth">
+                                <option selected disabled="">Månad</option>
+                                <option value="m01">01</option>
+                                <option value="m02">02</option>
+                                <option value="m03">03</option>
+                                <option value="m04">04</option>
+                                <option value="m05">05</option>
+                                <option value="m06">06</option>
+                                <option value="m07">07</option>
+                                <option value="m08">08</option>
+                                <option value="m09">09</option>
+                                <option value="m10">10</option>
+                                <option value="m11">11</option>
+                                <option value="m12">12</option>
+                            </select>
+                            <select id="cardYear">
+                                <option selected disabled="">År</option>
+                                <option value="y22">22</option>
+                                <option value="y23">23</option>
+                                <option value="y24">24</option>
+                                <option value="y25">25</option>
+                                <option value="y26">26</option>
+                                <option value="y27">27</option>
+                                <option value="y28">28</option>
+                                <option value="y29">29</option>
+                            </select>
+                            </label>
+                        </div>
+                        <label>CVV</label>
+                        <input type="text" placeholder="CVV" id="cardCVV">
+                        <label>Namn på kortinnehavare:</label>
+                        <input type="text" placeholder="Namn" id="cardOwner">
                     </div>
-                    <label>CVV</label>
-                    <input type="text" placeholder="CVV" id="cardCVV">
-                    <label>Namn på kortinnehavare:</label>
-                    <input type="text" placeholder="Namn" id="cardOwner">
+                    <div class="form-control" id="invoiceDetails">
+                        <label for="">Personnummer</label>
+                        <input type="text" placeholder="Personnummer" id="socialSecurity">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="personalDetails" name="personuppgifter">
+                        <label for="personalDetails">Jag godkänner att mina personuppgifter behandlas</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="newsLetter" name="newsLetter">
+                        <label for="newsLetter">Jag vill prenumerera på nyhetsbrevet</label>
+                    </div>
                 </div>
-                <div class="form-control" id="invoiceDetails">
-                    <label for="">Personnummer</label>
-                    <input type="text" placeholder="Personnummer" id="socialSecurity">
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small class="toggle-hidden"></small>
-                </div>
-                <div class="checkbox">
-                    <input type="checkbox" id="personalDetails" name="personuppgifter">
-                    <label for="personalDetails">Jag godkänner att mina personuppgifter behandlas</label>
-                </div>
-                <div class="checkbox">
-                    <input type="checkbox" id="newsLetter" name="newsLetter">
-                    <label for="newsLetter">Jag vill prenumerera på nyhetsbrevet</label>
-                </div>
-            </div>
                 <button id="orderButton">Beställ</button>
                 <button id="clear" type="reset">Rensa</button>
         </div>
         </form>
         </div>
-    </main>
+        </main>
     <script src="script.js"></script>
 </body>
 

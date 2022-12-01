@@ -146,45 +146,45 @@ function renderDonuts() {
 
   //* Funktion för att öka antal munkar vid klick av plusknapp
 
-  function updateDonutAmount(e) {
-    const id = e.currentTarget.dataset.id; // Om du vill skicka med ID:t till funktionen updateDonutSum
-    // "plocka upp" den här, och sedan skicka med den på rad 168 till funktionen updateDonutSum
+function updateDonutAmount(e) {
+  const id = e.currentTarget.dataset.id; // Om du vill skicka med ID:t till funktionen updateDonutSum
+  // "plocka upp" den här, och sedan skicka med den på rad 168 till funktionen updateDonutSum
 
-    const amountEl = e.currentTarget.parentElement.querySelector(".amount");
+  const amountEl = e.currentTarget.parentElement.querySelector(".amount");
 
-    let amount = Number(amountEl.innerText);
-    amountEl.innerHTML = amount + 1;
+  let amount = Number(amountEl.innerText);
+  amountEl.innerHTML = amount + 1;
 
-    updateDonutSum(e.currentTarget.parentElement, id);
+  updateDonutSum(e.currentTarget.parentElement, id);
+}
+
+//* Funktion för att minska antal munkar vid klick av minusknapp
+
+function updateDonutAmountMinus(e) {
+  const id = e.currentTarget.dataset.id;
+
+  const amountEl = e.currentTarget.parentElement.querySelector(".amount");
+
+  let amount = Number(amountEl.innerText);
+
+  if (amount - 1 < 0) {
+    return;
   }
 
-  //* Funktion för att minska antal munkar vid klick av minusknapp
+  amountEl.innerHTML = amount - 1;
 
-  function updateDonutAmountMinus(e) {
-    const id = e.currentTarget.dataset.id;
+  updateDonutSum(e.currentTarget.parentElement, id);
+}
 
-    const amountEl = e.currentTarget.parentElement.querySelector(".amount");
+//* Plus och minus - uppdatera antal munkar vid klick
 
-    let amount = Number(amountEl.innerText);
+document.querySelectorAll("button.plus").forEach((btn) => {
+  btn.addEventListener("click", updateDonutAmount);
+});
 
-    if (amount - 1 < 0) {
-      return;
-    }
-
-    amountEl.innerHTML = amount - 1;
-
-    updateDonutSum(e.currentTarget.parentElement, id);
-  }
-
-  //* Plus och minus - uppdatera antal munkar vid klick
-
-  document.querySelectorAll("button.plus").forEach((btn) => {
-    btn.addEventListener("click", updateDonutAmount);
-  });
-
-  document.querySelectorAll("button.minus").forEach((btn) => {
-    btn.addEventListener("click", updateDonutAmountMinus);
-  });
+document.querySelectorAll("button.minus").forEach((btn) => {
+  btn.addEventListener("click", updateDonutAmountMinus);
+});
 
   
 
@@ -233,6 +233,16 @@ document.getElementById("dropBtn").onclick = function () { filterDisplay() };
 
 function filterDisplay() {
   document.getElementById("filterDropdown").classList.toggle("show");
+}
+
+// Sortera munkar 
+
+const sortPrice = document.querySelector("#priceSort");
+sortPrice.addEventListener("click", sortByPrice);
+
+function sortByPrice() {
+  donuts.sort((a, b) => a.price - b.price);
+  renderDonuts();
 }
 
 //* Formulär
@@ -426,6 +436,11 @@ radioButtons.forEach(radio => {
 
 // Varukorg
 
+/* for (let amount > 0; i < donuts.length; i++) {
+  let extraCSSClass = '';
+  if (i === 0) {
+    donutContainer.innerHTML += */
+
 // vid klick av plusknapp - munk hamnar i varukorgen
 // summan uppdateras 
 
@@ -447,5 +462,6 @@ radioButtons.forEach(radio => {
 // Publicera!!!!
 // Byt bilder på munkarna
 // Betyg på munkarna
+// Rensa errormeddelanden 
 
 // gör en loop med if sats som kollar om amount är större än 0 (glöm inte anropa funktionen)
