@@ -512,8 +512,19 @@ if (today.getDay() === 6 && today.getHours() < 10) {
   totalPrice * 0.1, 'kr. Totalsumman blir:', totalPrice * 0.9, 'kr.';
   console.log('Måndagsrabatt! Njut av 10 % rabatt på din beställning:', totalPrice * 0.1, 'kr. Totalsumman blir:', totalPrice * 0.9, 'kr.');
 
-}
+} 
 
+function mondaySpecial() {
+  const date = new Date();
+  discount.innerHTML = '';
+
+  if (date.getDay() === 6 && date.getHours() < 10) {
+    total.discountText = 'Måndagsrabatt! Njut av 10% rabatt på din beställning!';
+
+    total.price = Math.round(total.price * 0.9);
+    discount.innerHTML = total.discountText;
+  }
+}
 
 // ---- FORMULÄR ----
 // x Nya fält för kortbetalning och faktura 
@@ -531,4 +542,4 @@ if (today.getDay() === 6 && today.getHours() < 10) {
 // x Responsitivitet - surfplatta
 // Publicera!!!!
 // x Byt bilder på munkarna
-// x Rensa errormeddelanden 
+// x Rensa errormeddelanden
