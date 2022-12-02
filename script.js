@@ -156,6 +156,8 @@ function updateDonutAmount(e) {
   amountEl.innerHTML = amount + 1;
 
   updateDonutSum(e.currentTarget.parentElement, id);
+
+  renderCart();
 }
 
 //* Funktion för att minska antal munkar vid klick av minusknapp
@@ -174,6 +176,8 @@ function updateDonutAmountMinus(e) {
   amountEl.innerHTML = amount - 1;
 
   updateDonutSum(e.currentTarget.parentElement, id);
+
+  renderCart();
 }
 
 //* Plus och minus - uppdatera antal munkar vid klick
@@ -185,25 +189,6 @@ document.querySelectorAll("button.plus").forEach((btn) => {
 document.querySelectorAll("button.minus").forEach((btn) => {
   btn.addEventListener("click", updateDonutAmountMinus);
 });
-
-  
-
-  /* const amount = donuts.reduce((previousValue, donut) => {
-    return (donut.amount * donut.price) + previousValue;
-      }, 
-      0
-      );
-  
-    console.log(sum);
-
-  const sum = donuts.reduce((previousValue, donut) => {
-    return donut.price + previousValue;
-    }, 
-    0
-    ); */
-
-  // document.querySelector("#cartSum").innerHTML = amount;
-  // document.querySelector("#cartSum").innerHTML = sum;
 
 }
 
@@ -225,6 +210,12 @@ function updateDonutSum(donutElement, id) {
   const sum = Number(donutSinglePrice) * Number(orderedAmount);
 
   donutElement.querySelector(".sum").innerHTML = sum + " kr";
+
+
+donuts[id].amount = Number(orderedAmount);
+donuts[id].sum = Number(donutSinglePrice) * Number(orderedAmount);
+
+
 }
 
 //* Dropdownfilter - mobil
@@ -446,13 +437,57 @@ radioButtons.forEach(radio => {
 
 // Varukorg
 
-/* for (let amount > 0; i < donuts.length; i++) {
-  let extraCSSClass = '';
-  if (i === 0) {
-    donutContainer.innerHTML += */
-
-// vid klick av plusknapp - munk hamnar i varukorgen
 // summan uppdateras
+
+function renderCart() {
+  cart.innerHTML = '';
+
+  for (let i = 0; i < donuts.length; i++) {
+    console.log(donuts[i]);
+    if (donuts[i].amount > 0) {
+      cart.innerHTML += `
+                <img src="${donuts[i].imgFile}" alt="${donuts[i].name}" height="90">
+                  <h4 class="donutName">${donuts[i].name}</h2>
+                      <div class="donutDetails">
+                          <div class="donutPrice">
+                              <span><span class="price">${donuts[i].price}</span>
+                                  <p class="priceText"> kr</p>
+                          </div>
+                          <div class="donutAmount">
+                              <span class="amount" id="cartAmount">${donuts[i].amount}</span> st
+                              <span class="sum" id="cartSum">${donuts[i].sum} kr</span>
+                              </div>
+                      </div>
+      `
+    }
+  }
+}
+
+console.log(donuts.sum);
+
+renderCart();
+
+
+
+  /* const amount = donuts.reduce((previousValue, donut) => {
+    return (donut.amount * donut.price) + previousValue;
+      }, 
+      0
+      );
+  
+    console.log(sum);
+
+  const sum = donuts.reduce((previousValue, donut) => {
+    return donut.price + previousValue;
+    }, 
+    0
+    ); */
+
+  // document.querySelector("#cartSum").innerHTML = amount;
+  // document.querySelector("#cartSum").innerHTML = sum;
+
+
+
 
 // Timer som rensar formulär efter viss tid
 
@@ -477,7 +512,6 @@ function orderTimeOut() {
 
 // ---- FORMULÄR ----
 // x Nya fält för kortbetalning och faktura 
-// (skippa) Utgråad beställningsknapp när det är fel i formuläret
 // x Knapp för att rensa beställning och order
 // x Fält för rabattkod
 // (funkar inte) Timer som rensar formulär
@@ -491,8 +525,7 @@ function orderTimeOut() {
 // Prettier och ESLint
 // x Responsitivitet - surfplatta
 // Publicera!!!!
-// Byt bilder på munkarna
-// Betyg på munkarna
+// x Byt bilder på munkarna
 // x Rensa errormeddelanden 
 
 // gör en loop med if sats som kollar om amount är större än 0 (glöm inte anropa funktionen)
