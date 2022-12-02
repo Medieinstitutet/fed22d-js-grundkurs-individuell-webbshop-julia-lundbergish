@@ -158,6 +158,7 @@ function updateDonutAmount(e) {
   updateDonutSum(e.currentTarget.parentElement, id);
 
   renderCart();
+  renderPrice()
 }
 
 //* Funktion för att minska antal munkar vid klick av minusknapp
@@ -178,6 +179,7 @@ function updateDonutAmountMinus(e) {
   updateDonutSum(e.currentTarget.parentElement, id);
 
   renderCart();
+  renderPrice()
 }
 
 //* Plus och minus - uppdatera antal munkar vid klick
@@ -354,6 +356,10 @@ function checkInputs() {
 
 }
 
+// Timer
+
+setInterval (orderTimeOut, 900000);
+
 // Funktion för error och success
 
 function setErrorFor(input, message) {
@@ -443,7 +449,6 @@ function renderCart() {
   cart.innerHTML = '';
 
   for (let i = 0; i < donuts.length; i++) {
-    console.log(donuts[i]);
     if (donuts[i].amount > 0) {
       cart.innerHTML += `
                 <img src="${donuts[i].imgFile}" alt="${donuts[i].name}" height="90">
@@ -463,61 +468,61 @@ function renderCart() {
   }
 }
 
-console.log(donuts.sum);
-
 renderCart();
 
-
-
-  /* const amount = donuts.reduce((previousValue, donut) => {
+function renderPrice() {
+  cartTotal.innerHTML = '';
+  const amount = donuts.reduce((previousValue, donut) => {
     return (donut.amount * donut.price) + previousValue;
       }, 
       0
       );
-  
-    console.log(sum);
 
-  const sum = donuts.reduce((previousValue, donut) => {
-    return donut.price + previousValue;
-    }, 
-    0
-    ); */
+      cartTotal.innerHTML += `
+      <p>Totalt: </p><p id="totalPrice">${amount} kr</p>
+      `
+    }
 
-  // document.querySelector("#cartSum").innerHTML = amount;
-  // document.querySelector("#cartSum").innerHTML = sum;
-
-
-
+renderPrice()
 
 // Timer som rensar formulär efter viss tid
 
-const timeOut = setInterval (orderTimeOut, 10000);
 
 function orderTimeOut() {
-  if (
-    firstName.value.length > 0 ||
-    lastName.value.length > 0 ||
-    street.value.length > 0 ||
-    zipCode.value.length > 0 ||
-    city.value.length > 0 ||
-    code.value.length > 0 ||
-    phone.value.lengt > 0 ||
-    email.value.length > 0 ||
-    socialSecurity.value.length > 0 
-  ) {
     clearForm();
     alert('Dy fyllde i dina uppgifter för långsamt.');
   }
+
+// Specialregler 
+
+let totalPrice = 0;
+for (let i = 0; i < donuts.length; i++) {
+  if (donuts[i].amount > 0) {
+    totalPrice += donuts[i].amount * donuts[i].price;
+  }
 }
+
+console.log(totalPrice);
+
+const today = new Date();
+if (today.getDay() === 6 && today.getHours() < 10) {
+  discount.innerHTML += `
+  <p>DMåndagsrabatt! Njut av 10 % rabatt på din beställning!</p>
+  `
+  totalPrice * 0.1, 'kr. Totalsumman blir:', totalPrice * 0.9, 'kr.';
+  console.log('Måndagsrabatt! Njut av 10 % rabatt på din beställning:', totalPrice * 0.1, 'kr. Totalsumman blir:', totalPrice * 0.9, 'kr.');
+
+}
+
 
 // ---- FORMULÄR ----
 // x Nya fält för kortbetalning och faktura 
 // x Knapp för att rensa beställning och order
 // x Fält för rabattkod
-// (funkar inte) Timer som rensar formulär
+// x Timer som rensar formulär
 
 // ---- VARUKORG ----
-// Visuell feedback på att varukorgen uppdateras
+// x Visuell feedback på att varukorgen uppdateras
 // Specialregler vid beställning 
 
 // ---- ÖVRIGT ----
@@ -527,5 +532,3 @@ function orderTimeOut() {
 // Publicera!!!!
 // x Byt bilder på munkarna
 // x Rensa errormeddelanden 
-
-// gör en loop med if sats som kollar om amount är större än 0 (glöm inte anropa funktionen)
