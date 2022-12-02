@@ -83,6 +83,11 @@
   font-size: 0.9rem;
 }
 
+.mobileDropdown {
+  list-style: none;
+  margin-left: -30px;
+}
+
 .show {
   display: block;
 }

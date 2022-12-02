@@ -2,84 +2,84 @@
 
 const donuts = [
   {
-    name: "Red velvet",
-    price: 22,
-    rating: 4,
-    amount: 0,
-    sum: 0,
-    imgFile: "images/special-donut.png",
-  },
-  {
-    name: "Caramel Crisp",
-    price: 16,
-    rating: 4,
-    amount: 0,
-    sum: 0,
-    imgFile: "images/special-donut.png",
-  },
-  {
-    name: "La La Latte",
-    price: 14,
-    rating: 5,
-    amount: 0,
-    sum: 0,
-    imgFile: "images/special-donut.png",
-  },
-  {
-    name: "Tutti Frutti",
-    price: 14,
-    rating: 3,
-    amount: 0,
-    sum: 0,
-    imgFile: "images/special-donut.png",
-  },
-  {
-    name: "Oreo",
-    price: 16,
-    rating: 5,
-    amount: 0,
-    sum: 0,
-    imgFile: "images/special-donut.png",
-  },
-  {
-    name: "Choklad",
+    name: "Coco",
     price: 12,
     rating: 4,
     amount: 0,
     sum: 0,
-    imgFile: "images/special-donut.png",
+    imgFile: "images/coco.jpg",
   },
   {
-    name: "Viol",
+    name: "My Neighbor TotOreo",
+    price: 16,
+    rating: 4,
+    amount: 0,
+    sum: 0,
+    imgFile: "images/oreo.jpg",
+  },
+  {
+    name: "Chocolat",
+    price: 14,
+    rating: 5,
+    amount: 0,
+    sum: 0,
+    imgFile: "images/chocolate.jpg",
+  },
+  {
+    name: "Lé(m)on",
+    price: 14,
+    rating: 3,
+    amount: 0,
+    sum: 0,
+    imgFile: "images/lemon.jpg",
+  },
+  {
+    name: "Mangonolia",
+    price: 16,
+    rating: 5,
+    amount: 0,
+    sum: 0,
+    imgFile: "images/mangoripple.jpg",
+  },
+  {
+    name: "Moulin Rouge",
+    price: 12,
+    rating: 4,
+    amount: 0,
+    sum: 0,
+    imgFile: "images/cherry.jpg",
+  },
+  {
+    name: "Berry Poppins",
     price: 16,
     rating: 3,
     amount: 0,
     sum: 0,
-    imgFile: "images/special-donut.png",
+    imgFile: "images/berrypoppins.jpg",
   },
   {
-    name: "Lime key pie",
+    name: "Applecalypse Now",
     price: 20,
     rating: 4,
     amount: 0,
     sum: 0,
-    imgFile: "images/special-donut.png",
+    imgFile: "images/apple.jpg",
   },
   {
-    name: "Cheesecake",
+    name: "Meminto",
     price: 16,
     rating: 4,
     amount: 0,
     sum: 0,
-    imgFile: "images/special-donut.png",
+    imgFile: "images/mint.jpg",
   },
   {
-    name: "Glazed",
+    name: "Coco",
     price: 12,
     rating: 5,
     amount: 0,
     sum: 0,
-    imgFile: "images/special-donut.png",
+    imgFile: "images/coco.jpg",
   },
 ];
 
@@ -99,7 +99,7 @@ function renderDonuts() {
                     <img src="images/special-donut.png" alt="" height="240">
                     <div class="donutContent">
                         <h2 class="donutNameSpecial">Månadens donut</h2>
-                        <h3 class="donutName">Caramel Crisp</h2>
+                        <h3 class="donutName">La La Latte</h2>
                         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil aperiam, optio
                             ullam alias dolore maiores necessitatibus sit dolor molestiae tenetur cum.
                             <br><br>
@@ -126,7 +126,7 @@ function renderDonuts() {
         <article class="donutGrid">
           <img src="${donuts[i].imgFile}" alt="${donuts[i].name}" height="240">
           <div class="donutContent">
-            <h3 class="donutName">${donuts[i].name}</h2>
+            <h3 class="donutName">${donuts[i].name}</h3>
             <div class="donutDetails">
               <div class="donutPrice">
                 <div class="donutAmount">
@@ -240,7 +240,17 @@ function filterDisplay() {
 const sortPrice = document.querySelector("#priceSort");
 sortPrice.addEventListener("click", sortByPrice);
 
-function sortByPrice() {
+function sortByPrice(e) {
+  e.preventDefault();
+  donuts.sort((a, b) => a.price - b.price);
+  renderDonuts();
+}
+
+const sortPriceMobile = document.querySelector("#priceSortMobile");
+sortPrice.addEventListener("click", sortByPrice);
+
+function sortByPrice(e) {
+  e.preventDefault();
   donuts.sort((a, b) => a.price - b.price);
   renderDonuts();
 }
@@ -442,26 +452,47 @@ radioButtons.forEach(radio => {
     donutContainer.innerHTML += */
 
 // vid klick av plusknapp - munk hamnar i varukorgen
-// summan uppdateras 
+// summan uppdateras
+
+// Timer som rensar formulär efter viss tid
+
+const timeOut = setInterval (orderTimeOut, 10000);
+
+function orderTimeOut() {
+  if (
+    firstName.value.length > 0 ||
+    lastName.value.length > 0 ||
+    street.value.length > 0 ||
+    zipCode.value.length > 0 ||
+    city.value.length > 0 ||
+    code.value.length > 0 ||
+    phone.value.lengt > 0 ||
+    email.value.length > 0 ||
+    socialSecurity.value.length > 0 
+  ) {
+    clearForm();
+    alert('Dy fyllde i dina uppgifter för långsamt.');
+  }
+}
 
 // ---- FORMULÄR ----
 // x Nya fält för kortbetalning och faktura 
 // (skippa) Utgråad beställningsknapp när det är fel i formuläret
 // x Knapp för att rensa beställning och order
 // x Fält för rabattkod
-// Timer som rensar formulär
+// (funkar inte) Timer som rensar formulär
 
 // ---- VARUKORG ----
 // Visuell feedback på att varukorgen uppdateras
 // Specialregler vid beställning 
 
 // ---- ÖVRIGT ----
-// Sortera i bokstavsordning
+// (funkar på webb..) Sortera i bokstavsordning
 // Prettier och ESLint
-// Responsitivitet - surfplatta
+// x Responsitivitet - surfplatta
 // Publicera!!!!
 // Byt bilder på munkarna
 // Betyg på munkarna
-// Rensa errormeddelanden 
+// x Rensa errormeddelanden 
 
 // gör en loop med if sats som kollar om amount är större än 0 (glöm inte anropa funktionen)

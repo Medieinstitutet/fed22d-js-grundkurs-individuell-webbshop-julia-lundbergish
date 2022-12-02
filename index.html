@@ -38,15 +38,17 @@
             <ul class="filterList"> Sortera efter:
                 <li class="filterItem"><a href="#">Populära</a></li>
                 <li class="filterItem"><a href="#">A-Z</a></li>
-                <li class="filterItem"><a href="#">Pris</a></li>
+                <li class="filterItem" id="priceSort"><a href="#">Pris</a></li>
             </ul>
         </div>
         <div class="dropdown">
             <button id="dropBtn">Filtrera</button>
             <div id="filterDropdown" class="dropdown-content">
-                <a href="#">Populära</a>
-                <a href="#">A-Z</a>
-                <a id="priceSort" href="#">Pris</a>
+            <ul class="mobileDropdown">
+                <li class="filterItem"><a href="#">Populära</a></li>
+                <li class="filterItem"><a href="#">A-Z</a></li>
+                <li class="filterItem" id="priceSortMobile"><a href="#">Pris</a></li>
+            </ul>
             </div>
         </div>
         <!-- Special donut -->
@@ -56,7 +58,7 @@
                     <img src="images/special-donut.png" alt="" height="240">
                     <div class="donutContent">
                         <h2 class="donutNameSpecial">Månadens donut</h2>
-                        <h3 class="donutName">Caramel Crisp</h2>
+                        <h3 class="donutName">Chocolat</h3>
                             <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
                                 aperiam, optio
                                 ullam alias dolore maiores necessitatibus sit dolor molestiae tenetur cum.
