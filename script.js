@@ -508,8 +508,7 @@ const today = new Date();
 if (today.getDay() === 6 && today.getHours() < 10) {
   discount.innerHTML += `
   <p>DMåndagsrabatt! Njut av 10 % rabatt på din beställning!</p>
-  `
-  totalPrice * 0.1, 'kr. Totalsumman blir:', totalPrice * 0.9, 'kr.';
+  ${totalPrice * 0.1} kr. Totalsumman blir: ${totalPrice * 0.9} kr.`;
   console.log('Måndagsrabatt! Njut av 10 % rabatt på din beställning:', totalPrice * 0.1, 'kr. Totalsumman blir:', totalPrice * 0.9, 'kr.');
 
 } 
