@@ -1,5 +1,9 @@
 //* Objekt
 
+const today = new Date();
+const isFriday = today.getDay() === 6;
+const isMonday = today.getDay() === 1;
+
 const donuts = [
   {
     name: "Coco",
@@ -121,6 +125,10 @@ function renderDonuts() {
                 </article>
                 `
     } else {
+      let adjustedPrice = donuts[i].price;
+      if (isFriday && isMonday) {
+        adjustedPrice = adjustedPrice * 1.15;
+      }
       // Donutgrid
       donutContainer.innerHTML += `
         <article class="donutGrid">
@@ -130,7 +138,7 @@ function renderDonuts() {
             <div class="donutDetails">
               <div class="donutPrice">
                 <div class="donutAmount">
-                  <span class="price">${donuts[i].price}</span> kr
+                  <span class="price">${donuts[i].adjustedPrice}</span> kr
                 </div>
                 <span class="amount">${donuts[i].amount}</span> st
                 <span class="sum">${donuts[i].sum} kr</span>
@@ -504,12 +512,10 @@ for (let i = 0; i < donuts.length; i++) {
 
 console.log(totalPrice);
 
-const today = new Date();
 if (today.getDay() === 6 && today.getHours() < 10) {
   discount.innerHTML += `
   <p>DMåndagsrabatt! Njut av 10 % rabatt på din beställning!</p>
-  `
-  totalPrice * 0.1, 'kr. Totalsumman blir:', totalPrice * 0.9, 'kr.';
+  ${totalPrice * 0.1} kr. Totalsumman blir: ${totalPrice * 0.9} kr.`;
   console.log('Måndagsrabatt! Njut av 10 % rabatt på din beställning:', totalPrice * 0.1, 'kr. Totalsumman blir:', totalPrice * 0.9, 'kr.');
 
 } 
