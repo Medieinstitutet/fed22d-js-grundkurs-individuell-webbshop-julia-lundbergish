@@ -451,7 +451,7 @@ radioButtons.forEach(radio => {
 
 // Varukorg
 
-// summan uppdateras
+// Summan uppdateras
 
 function renderCart() {
   cart.innerHTML = '';
@@ -543,7 +543,7 @@ function mondaySpecial() {
 // Specialregler vid beställning 
 
 // ---- ÖVRIGT ----
-// (funkar på webb..) Sortera i bokstavsordning
+// x Sortera i bokstavsordning
 // Prettier och ESLint
 // x Responsitivitet - surfplatta
 // Publicera!!!!
