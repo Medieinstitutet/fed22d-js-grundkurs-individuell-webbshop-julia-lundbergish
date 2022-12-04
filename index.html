@@ -17,15 +17,17 @@
     <header>
         <nav>
             <h1 id="gottfrid">Gottfrids Munkfabrik</h1>
-            <img class="logo" src="images/Gottfrid-logo.png" alt="Gottfrids munkfabrik logotype" height="90">
+            <img class="logo" src="images/Gottfrid-logo.png" alt="Gottfrids munkfabrik logotype" height="90"
+                width="auto">
             <!-- Shopping cart icon -->
             <p id="priceText"></p>
             <ul class="navlink">
                 <li><a href="#">Om Oss</a></li>
                 <li><a href="#">Kontakt</a></li>
-                <li><a aria-label="Varukorg" href="#"><i aria-hidden="true" class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a aria-label="Varukorg" href="#"><i aria-hidden="true" class="fa-solid fa-cart-shopping"></i></a>
+                </li>
             </ul>
-            <button class="nav-button">
+            <button aria-label=”Navigation” class="nav-button">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -35,7 +37,8 @@
     <main>
         <!-- Filter -->
         <div class="filter">
-            <ul class="filterList"> Sortera efter:
+            <p>Sortera efter:</p>
+            <ul class="filterList">
                 <li class="filterItem"><a href="#">Populära</a></li>
                 <li class="filterItem"><a href="#">A-Z</a></li>
                 <li class="filterItem" id="priceSort"><a href="#">Pris</a></li>
@@ -44,11 +47,11 @@
         <div class="dropdown">
             <button id="dropBtn">Filtrera</button>
             <div id="filterDropdown" class="dropdown-content">
-            <ul class="mobileDropdown">
-                <li class="filterItem"><a href="#">Populära</a></li>
-                <li class="filterItem"><a href="#">A-Z</a></li>
-                <li class="filterItem" id="priceSortMobile"><a href="#">Pris</a></li>
-            </ul>
+                <ul class="mobileDropdown">
+                    <li class="filterItem"><a href="#">Populära</a></li>
+                    <li class="filterItem"><a href="#">A-Z</a></li>
+                    <li class="filterItem" id="priceSortMobile"><a href="#">Pris</a></li>
+                </ul>
             </div>
         </div>
         <!-- Special donut -->
@@ -59,25 +62,25 @@
                     <div class="donutContent">
                         <h2 class="donutNameSpecial">Månadens donut</h2>
                         <h3 class="donutName">Chocolat</h3>
-                            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-                                aperiam, optio
-                                ullam alias dolore maiores necessitatibus sit dolor molestiae tenetur cum.
-                                <br><br>
-                                Odio quasi magnam nobis debitis unde incidunt. Commodi laborum velit.
-                            </p>
-                            <!-- Rating icons -->
-                            <div class="donutDetails">
-                                <div class="donutPrice">
-                                    <span><span class="price">22</span>
-                                        <p class="priceText"> kr</p>
-                                </div>
-                                <div class="donutAmount">
-                                    <span class="amount">0</span> st
-                                    <span class="sum">0 kr</span>
-                                    <button class="minus" data-operator="minus">-</button>
-                                    <button class="plus" data-operator="plus">+</button>
-                                </div>
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+                            aperiam, optio
+                            ullam alias dolore maiores necessitatibus sit dolor molestiae tenetur cum.
+                            <br><br>
+                            Odio quasi magnam nobis debitis unde incidunt. Commodi laborum velit.
+                        </p>
+                        <!-- Rating icons -->
+                        <div class="donutDetails">
+                            <div class="donutPrice">
+                                <span><span class="price">22</span>
+                                    <p class="priceText"> kr</p>
                             </div>
+                            <div class="donutAmount">
+                                <span class="amount">0</span> st
+                                <span class="sum">0 kr</span>
+                                <button class="minus" data-operator="minus">-</button>
+                                <button class="plus" data-operator="plus">+</button>
+                            </div>
+                        </div>
                     </div>
                 </article>
                 <!-- Donut grid -->
@@ -122,13 +125,14 @@
                     </div>
             </div>
             <div id="cartTotal">
-                <p>Totalt: </p><p id="totalPrice"></p>
+                <p id="totalText">Totalt: </p>
+                <p id="totalPriceText"></p>
             </div>
             <div id="discount">
                 <p id="discountText"></p>
             </div>
             <h3 id="orderDonutsText">Beställ</h3>
-        
+
             <form class="form" id="form">
                 <div class="column1">
                     <div class="form-control">
@@ -192,7 +196,7 @@
                 </div>
                 <div class="form-control discount">
                     <label for="">Rabattkod</label>
-                    <input type="text" placeholder="Rabattkod" id="discount">
+                    <input type="text" placeholder="Rabattkod" id="discountInput">
                 </div>
                 <div class="cartOptions">
                     <input type="radio" id="card" name="paymentOption" value="card">
@@ -258,8 +262,7 @@
         </div>
         </form>
         </div>
-        </main>
+    </main>
     <script src="script.js"></script>
 </body>
-
 </html>

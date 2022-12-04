@@ -692,9 +692,12 @@
   }
   /* Kassa och formulär */
   #cart {
-    margin-left: 8%;
+    margin-left: 3%;
     font-family: "Jost", sans-serif;
     padding-bottom: 20px;
+  }
+  #cart img {
+    margin-bottom: 20px;
   }
   #cart .donutName {
     margin-left: 10%;
@@ -718,6 +721,16 @@
     padding: 20px;
     border-radius: 10px;
     background-color: #afddff;
+  }
+  .cartContainer #cartTotal {
+    font-family: "Jost", sans-serif;
+  }
+  .cartContainer #cartTotal #totalText {
+    margin-left: 3%;
+  }
+  .cartContainer #cartTotal #totalPriceText {
+    margin-left: 7%;
+    margin-top: -39px;
   }
   .cartContainer #orderDonutsText {
     font-family: "Jost", sans-serif;
