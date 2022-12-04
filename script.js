@@ -1,17 +1,19 @@
-//* Objekt
+// ------------ Tidsspecifika variabler ------------
 
 const today = new Date();
 const isFriday = today.getDay() === 6;
 const isMonday = today.getDay() === 1;
 
+// ------------  Objekt ------------
+
 const donuts = [
   {
-    name: "Coco",
-    price: 12,
+    name: "La La Latte",
+    price: 22,
     rating: 4,
     amount: 0,
     sum: 0,
-    imgFile: "images/coco.jpg",
+    imgFile: "images/special-donut.png",
   },
   {
     name: "My Neighbor TotOreo",
@@ -87,16 +89,16 @@ const donuts = [
   },
 ];
 
-//* Munkcontainer
+// ------------  Munkcontainer ------------
 
 const donutContainer = document.querySelector("#donutContainer .donuts"); // Ändrade selektor här
 
 function renderDonuts() {
   donutContainer.innerHTML = ""; // Här töms hela innehållet i #donutContainer
 
-  // Specialstylad donut 
+  // Specialstylad donut
   for (let i = 0; i < donuts.length; i++) {
-    let extraCSSClass = '';
+    let extraCSSClass = "";
     if (i === 0) {
       donutContainer.innerHTML += `
       <article class="special-donut">
@@ -123,12 +125,8 @@ function renderDonuts() {
                         </div>
                     </div>
                 </article>
-                `
+                `;
     } else {
-      let adjustedPrice = donuts[i].price;
-      if (isFriday && isMonday) {
-        adjustedPrice = adjustedPrice * 1.15;
-      }
       // Donutgrid
       donutContainer.innerHTML += `
         <article class="donutGrid">
@@ -138,7 +136,7 @@ function renderDonuts() {
             <div class="donutDetails">
               <div class="donutPrice">
                 <div class="donutAmount">
-                  <span class="price">${donuts[i].adjustedPrice}</span> kr
+                  <span class="price">${donuts[i].price}</span> kr
                 </div>
                 <span class="amount">${donuts[i].amount}</span> st
                 <span class="sum">${donuts[i].sum} kr</span>
@@ -152,65 +150,64 @@ function renderDonuts() {
     }
   }
 
-  //* Funktion för att öka antal munkar vid klick av plusknapp
+  // ------------ Justera antal munkar ------------
 
-function updateDonutAmount(e) {
-  const id = e.currentTarget.dataset.id; // Om du vill skicka med ID:t till funktionen updateDonutSum
-  // "plocka upp" den här, och sedan skicka med den på rad 168 till funktionen updateDonutSum
+  // Funktion för att öka antal munkar vid klick av plusknapp
 
-  const amountEl = e.currentTarget.parentElement.querySelector(".amount");
+  function updateDonutAmount(e) {
+    const id = e.currentTarget.dataset.id;
 
-  let amount = Number(amountEl.innerText);
-  amountEl.innerHTML = amount + 1;
+    const amountEl = e.currentTarget.parentElement.querySelector(".amount");
 
-  updateDonutSum(e.currentTarget.parentElement, id);
+    let amount = Number(amountEl.innerText);
+    amountEl.innerHTML = amount + 1;
 
-  renderCart();
-  renderPrice()
-}
+    updateDonutSum(e.currentTarget.parentElement, id);
 
-//* Funktion för att minska antal munkar vid klick av minusknapp
-
-function updateDonutAmountMinus(e) {
-  const id = e.currentTarget.dataset.id;
-
-  const amountEl = e.currentTarget.parentElement.querySelector(".amount");
-
-  let amount = Number(amountEl.innerText);
-
-  if (amount - 1 < 0) {
-    return;
+    renderCart();
+    renderPrice();
   }
 
-  amountEl.innerHTML = amount - 1;
+  // Funktion för att minska antal munkar vid klick av minusknapp
 
-  updateDonutSum(e.currentTarget.parentElement, id);
+  function updateDonutAmountMinus(e) {
+    const id = e.currentTarget.dataset.id;
 
-  renderCart();
-  renderPrice()
+    const amountEl = e.currentTarget.parentElement.querySelector(".amount");
+
+    let amount = Number(amountEl.innerText);
+
+    if (amount - 1 < 0) {
+      return;
+    }
+
+    amountEl.innerHTML = amount - 1;
+
+    updateDonutSum(e.currentTarget.parentElement, id);
+
+    renderCart();
+    renderPrice();
+  }
+
+  // Plus och minus - uppdatera antal munkar vid klick
+
+  document.querySelectorAll("button.plus").forEach((btn) => {
+    btn.addEventListener("click", updateDonutAmount);
+  });
+
+  document.querySelectorAll("button.minus").forEach((btn) => {
+    btn.addEventListener("click", updateDonutAmountMinus);
+  });
 }
 
-//* Plus och minus - uppdatera antal munkar vid klick
-
-document.querySelectorAll("button.plus").forEach((btn) => {
-  btn.addEventListener("click", updateDonutAmount);
-});
-
-document.querySelectorAll("button.minus").forEach((btn) => {
-  btn.addEventListener("click", updateDonutAmountMinus);
-});
-
-}
-
-// Funktion för att skriva ut munkar 
+// ------------  Funktion för att skriva ut munkar ------------
 renderDonuts();
 
-
-//* Uppdatera kostnad av munk vid klick av plus och minus
+// ------------  Uppdatera kostnad av munk vid klick av plus och minus ------------
 
 function updateDonutSum(donutElement, id) {
   console.log(donutElement);
-  console.log('id', id);
+  console.log("id", id);
   const donutSinglePrice =
     donutElement.parentElement.querySelector(".price").innerHTML;
   const orderedAmount = donutElement.querySelector(".amount").innerHTML;
@@ -221,22 +218,21 @@ function updateDonutSum(donutElement, id) {
 
   donutElement.querySelector(".sum").innerHTML = sum + " kr";
 
-
-donuts[id].amount = Number(orderedAmount);
-donuts[id].sum = Number(donutSinglePrice) * Number(orderedAmount);
-
-
+  donuts[id].amount = Number(orderedAmount);
+  donuts[id].sum = Number(donutSinglePrice) * Number(orderedAmount);
 }
 
-//* Dropdownfilter - mobil
+// ------------  Dropdownfilter - mobil ------------
 
-document.getElementById("dropBtn").onclick = function () { filterDisplay() };
+document.getElementById("dropBtn").onclick = function () {
+  filterDisplay();
+};
 
 function filterDisplay() {
   document.getElementById("filterDropdown").classList.toggle("show");
 }
 
-// Sortera munkar 
+//  ------------ Sortera munkar efter pris ------------
 
 const sortPrice = document.querySelector("#priceSort");
 sortPrice.addEventListener("click", sortByPrice);
@@ -256,25 +252,25 @@ function sortByPrice(e) {
   renderDonuts();
 }
 
-//* Formulär
+//  ------------ Formulär ------------
 
-const form = document.getElementById('form');
-const firstName = document.getElementById('firstName');
-const lastName = document.getElementById('lastName');
-const street = document.getElementById('street');
-const zipCode = document.getElementById('zipCode');
-const city = document.getElementById('city');
-const code = document.getElementById('code');
-const phone = document.getElementById('phone');
-const email = document.getElementById('email');
+const form = document.getElementById("form");
+const firstName = document.getElementById("firstName");
+const lastName = document.getElementById("lastName");
+const street = document.getElementById("street");
+const zipCode = document.getElementById("zipCode");
+const city = document.getElementById("city");
+const code = document.getElementById("code");
+const phone = document.getElementById("phone");
+const email = document.getElementById("email");
 
-form.addEventListener('submit', (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   checkInputs();
 });
 
-// Kontrollera värden utifrån input
+// ------------  Kontrollera värden utifrån input ------------
 
 function checkInputs() {
   const firstNameValue = firstName.value.trim();
@@ -289,96 +285,95 @@ function checkInputs() {
 
   // Namn
 
-  if(firstNameValue === '') {
+  if (firstNameValue === "") {
     // Visa error
     // Lägg till error class
-    setErrorFor(firstName, 'Måste fyllas i');
+    setErrorFor(firstName, "Måste fyllas i");
   } else {
     // Lägg till success class
     setSuccessFor(firstName);
   }
 
-  if(lastNameValue === '') {
-    setErrorFor(lastName, 'Måste fyllas i');
+  if (lastNameValue === "") {
+    setErrorFor(lastName, "Måste fyllas i");
   } else {
     setSuccessFor(lastName);
   }
 
   // Adress
 
-  if(streetValue === '') {
-    setErrorFor(street, 'Måste fyllas i');
+  if (streetValue === "") {
+    setErrorFor(street, "Måste fyllas i");
   } else {
     setSuccessFor(street);
   }
 
-  if(zipCodeValue === '') {
-    setErrorFor(zipCode, 'Måste fyllas i (5 siffror)');
+  if (zipCodeValue === "") {
+    setErrorFor(zipCode, "Måste fyllas i (5 siffror)");
   } else if (!isZipCode(zipCodeValue)) {
-    setErrorFor(zipCode, 'Postnumret är inte skrivet i ett giltigt format');
+    setErrorFor(zipCode, "Postnumret är inte skrivet i ett giltigt format");
   } else {
     setSuccessFor(zipCode);
   }
 
-  if(cityValue === '') {
-    setErrorFor(city, 'Måste fyllas i');
+  if (cityValue === "") {
+    setErrorFor(city, "Måste fyllas i");
   } else {
     setSuccessFor(city);
   }
 
-  if(codeValue === '') {
-    setErrorFor(code, 'Måste fyllas i - om du inte har en portkod skriv 0');
+  if (codeValue === "") {
+    setErrorFor(code, "Måste fyllas i - om du inte har en portkod skriv 0");
   } else {
     setSuccessFor(code);
   }
 
   // Telefon
 
-  if(phoneValue === '') {
-    setErrorFor(phone, 'Måste fyllas i');
-  } else if(!isPhone(phoneValue)) {
-    setErrorFor(phone, 'Telefonnumret är inte skrivet i ett giltigt format');
+  if (phoneValue === "") {
+    setErrorFor(phone, "Måste fyllas i");
+  } else if (!isPhone(phoneValue)) {
+    setErrorFor(phone, "Telefonnumret är inte skrivet i ett giltigt format");
   } else {
     setSuccessFor(phone);
   }
 
   // Epost
 
-  if(emailValue === '') {
-    setErrorFor(email, 'Måste fyllas i')
-  } else if(!isEmail(emailValue)) {
-    setErrorFor(email, 'Epostadressen är inte giltig');
+  if (emailValue === "") {
+    setErrorFor(email, "Måste fyllas i");
+  } else if (!isEmail(emailValue)) {
+    setErrorFor(email, "Epostadressen är inte giltig");
   } else {
     setSuccessFor(email);
   }
 
   // Personnummer
 
-  if(socialSecurityValue === '') {
-    setErrorFor(socialSecurity, 'Måste fyllas i');
-  } else if(!isSocialSecurity(socialSecurityValue)) {
-    setErrorFor(socialSecurity, 'Personnumret är ogiltigt');
+  if (socialSecurityValue === "") {
+    setErrorFor(socialSecurity, "Måste fyllas i");
+  } else if (!isSocialSecurity(socialSecurityValue)) {
+    setErrorFor(socialSecurity, "Personnumret är ogiltigt");
   } else {
     setSuccessFor(socialSecurity);
   }
-
 }
 
-// Timer
+// ------------ Timer ------------
 
-setInterval (orderTimeOut, 900000);
+setInterval(orderTimeOut, 900000);
 
-// Funktion för error och success
+// ------------  Funktion för error och success ------------
 
 function setErrorFor(input, message) {
   const formControl = input.parentElement; //parent = form-control
-  const small = formControl.querySelector('small');
-  formControl.classList.remove('success');
-  formControl.classList.add('error');
-  small.classList.remove('toggle-hidden');
+  const small = formControl.querySelector("small");
+  formControl.classList.remove("success");
+  formControl.classList.add("error");
+  small.classList.remove("toggle-hidden");
 
   // Error class
-  formControl.className = 'form-control error'; 
+  formControl.className = "form-control error";
 
   // Felmeddelande i small-tagg
   small.innerText = message;
@@ -386,15 +381,15 @@ function setErrorFor(input, message) {
 
 function setSuccessFor(input, message) {
   const formControl = input.parentElement;
-  const small = formControl.querySelector('small');
-  formControl.classList.add('success');
-  formControl.classList.remove('error');
+  const small = formControl.querySelector("small");
+  formControl.classList.add("success");
+  formControl.classList.remove("error");
 
   // Rensa errormeddelande
   small.innerText = "";
 }
 
-// Regex-funktioner 
+// ------------  Regex-funktioner ------------
 
 function isZipCode(zipCode) {
   return /[0-9]{3}[0-9]{2}/g.test(zipCode);
@@ -412,49 +407,49 @@ function isSocialSecurity(socialSecurity) {
   return /^\d{6,8}[-|(\s)]{0,1}\d{4}$/.test(socialSecurity);
 }
 
-// Rensa formulär
+// ------------  Rensa formulär ------------
 
-const clearFormBtn = document.querySelector('#clear');
-clearFormBtn.addEventListener('click', clearForm);
+const clearFormBtn = document.querySelector("#clear");
+clearFormBtn.addEventListener("click", clearForm);
 
 function clearForm() {
-  const formController = document.querySelectorAll('.form-control');
-  document.querySelector('.form').reset();
+  const formController = document.querySelectorAll(".form-control");
+  document.querySelector(".form").reset();
   formController.forEach((div) => {
-  div.classList.remove('success', 'error');
+    div.classList.remove("success", "error");
   });
-  document.querySelector('small').classList.add('toggle-hidden');
+  document.querySelector("small").classList.add("toggle-hidden");
 }
 
-// Kortbetalning och faktura
+//  ------------ Kortbetalning och faktura ------------
 
-const addCardForm = document.getElementById('cardDetails');
-const addInvoiceForm = document.getElementById('invoiceDetails')
+const addCardForm = document.getElementById("cardDetails");
+const addInvoiceForm = document.getElementById("invoiceDetails");
 
 function handleRadioClick() {
-  if (document.getElementById('card').checked) {
-    cardDetails.style.display = 'block';
+  if (document.getElementById("card").checked) {
+    cardDetails.style.display = "block";
   } else {
-    cardDetails.style.display = 'none';
+    cardDetails.style.display = "none";
   }
-  if (document.getElementById('invoice').checked) {
-    invoiceDetails.style.display = 'block';
+  if (document.getElementById("invoice").checked) {
+    invoiceDetails.style.display = "block";
   } else {
-    invoiceDetails.style.display = 'none';
+    invoiceDetails.style.display = "none";
   }
 }
 
 const radioButtons = document.querySelectorAll('input[name="paymentOption"]');
-radioButtons.forEach(radio => {
-  radio.addEventListener('click', handleRadioClick);
+radioButtons.forEach((radio) => {
+  radio.addEventListener("click", handleRadioClick);
 });
 
-// Varukorg
+// ------------  Varukorg ------------
 
 // Summan uppdateras
 
 function renderCart() {
-  cart.innerHTML = '';
+  cart.innerHTML = "";
 
   for (let i = 0; i < donuts.length; i++) {
     if (donuts[i].amount > 0) {
@@ -471,7 +466,7 @@ function renderCart() {
                               <span class="sum" id="cartSum">${donuts[i].sum} kr</span>
                               </div>
                       </div>
-      `
+      `;
     }
   }
 }
@@ -479,30 +474,28 @@ function renderCart() {
 renderCart();
 
 function renderPrice() {
-  cartTotal.innerHTML = '';
+  cartTotal.innerHTML = "";
   const amount = donuts.reduce((previousValue, donut) => {
-    return (donut.amount * donut.price) + previousValue;
-      }, 
-      0
-      );
+    return donut.amount * donut.price + previousValue;
+  }, 0);
 
-      cartTotal.innerHTML += `
-      <p>Totalt: </p><p id="totalPrice">${amount} kr</p>
-      `
-    }
+  cartTotal.innerHTML += `
+      <p id="totalText">Totalt: </p><p id="totalPriceText">${amount} kr</p>
+      `;
+}
 
-renderPrice()
+renderPrice();
 
 // Timer som rensar formulär efter viss tid
 
-
 function orderTimeOut() {
-    clearForm();
-    alert('Dy fyllde i dina uppgifter för långsamt.');
-  }
+  clearForm();
+  alert("Dy fyllde i dina uppgifter för långsamt.");
+}
 
-// Specialregler 
+// ------------ Specialregler (varav ingen inte fungerar i nuläget) ------------
 
+// Måndagsrabatt
 let totalPrice = 0;
 for (let i = 0; i < donuts.length; i++) {
   if (donuts[i].amount > 0) {
@@ -510,37 +503,50 @@ for (let i = 0; i < donuts.length; i++) {
   }
 }
 
-console.log(totalPrice);
-
-if (today.getDay() === 6 && today.getHours() < 10) {
+if (today.getDay() === 1 && today.getHours() > 10) {
   discount.innerHTML += `
-  <p>DMåndagsrabatt! Njut av 10 % rabatt på din beställning!</p>
+  <p id="discountText">Måndagsrabatt! Njut av 10 % rabatt på din beställning!</p>
   ${totalPrice * 0.1} kr. Totalsumman blir: ${totalPrice * 0.9} kr.`;
-  console.log('Måndagsrabatt! Njut av 10 % rabatt på din beställning:', totalPrice * 0.1, 'kr. Totalsumman blir:', totalPrice * 0.9, 'kr.');
-
-} 
-
-function mondaySpecial() {
-  const date = new Date();
-  discount.innerHTML = '';
-
-  if (date.getDay() === 6 && date.getHours() < 10) {
-    total.discountText = 'Måndagsrabatt! Njut av 10% rabatt på din beställning!';
-
-    total.price = Math.round(total.price * 0.9);
-    discount.innerHTML = total.discountText;
-  }
+  console.log(
+    "Måndagsrabatt! Njut av 10 % rabatt på din beställning:",
+    totalPrice * 0.1,
+    "kr. Totalsumman blir:",
+    totalPrice * 0.9,
+    "kr."
+  );
 }
 
+// Köp av 10 eller fler munkar = 10% rabatt (jag inser att denna inte ligger på rätt ställe)
+
+donuts.forEach((donut) => {
+  if (donut.amount > 10) {
+    let donutPrice = donut.price;
+    if (donut.amount >= 10) {
+      donutPrice *= 0.9;
+    }
+  }
+});
+
+// Fredag - Måndag
+
+function fridayToSunday() {
+  if ((isFriday && time >= 15) || (isMonday && time <= 3)) {
+    for (let i = 0; i < donuts.length; i++) {
+      donuts[i].price = Math.floor(donuts[i].price * 1.15);
+    }
+  }
+}
+fridayToSunday();
+
 // ---- FORMULÄR ----
-// x Nya fält för kortbetalning och faktura 
+// x Nya fält för kortbetalning och faktura
 // x Knapp för att rensa beställning och order
 // x Fält för rabattkod
 // x Timer som rensar formulär
 
 // ---- VARUKORG ----
 // x Visuell feedback på att varukorgen uppdateras
-// Specialregler vid beställning 
+// Specialregler vid beställning
 
 // ---- ÖVRIGT ----
 // x Sortera i bokstavsordning
