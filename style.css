@@ -622,7 +622,7 @@
   }
   .special-donut .donutNameSpecial {
     font-size: 1.8rem;
-    background-image: url("../images/blue-shape.png");
+    background-image: url("images/blue-shape.png");
     background-repeat: no-repeat;
     background-size: 36%;
     padding-right: 50px;
