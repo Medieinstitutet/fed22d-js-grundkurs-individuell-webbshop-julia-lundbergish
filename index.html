@@ -17,8 +17,7 @@
     <header>
         <nav>
             <h1 id="gottfrid">Gottfrids Munkfabrik</h1>
-            <img class="logo" src="images/Gottfrid-logo.png" alt="Gottfrids munkfabrik logotype" height="90"
-                width="auto">
+            <img class="logo" src="images/gottfrid-logo.png" alt="Gottfrids munkfabrik logotype" height="90">
             <!-- Shopping cart icon -->
             <p id="priceText"></p>
             <ul class="navlink">
@@ -71,7 +70,7 @@
                         <!-- Rating icons -->
                         <div class="donutDetails">
                             <div class="donutPrice">
-                                <span><span class="price">22</span>
+                                <span class="price">22</span>
                                     <p class="priceText"> kr</p>
                             </div>
                             <div class="donutAmount">
@@ -87,11 +86,11 @@
                 <article class="donutGrid">
                     <img src="images/special-donut.png" alt="" height="240">
                     <div class="donutContent">
-                        <h3 class="donutName">Caramel Crisp</h2>
+                        <h3 class="donutName">Caramel Crisp</h3>
                             <!-- Rating icons -->
                             <div class="donutDetails">
                                 <div class="donutPrice">
-                                    <span><span class="price">16</span>
+                                    <span class="price">16</span>
                                         <p class="priceText"> kr</p>
                                 </div>
                                 <div class="donutAmount">
@@ -112,10 +111,10 @@
             </div>
             <div id="cart">
                 <img src="images/special-donut.png" alt="" height="90">
-                <h4 class="donutName">Caramel Crisp</h2>
+                <h4 class="donutName">Caramel Crisp</h4>
                     <div class="donutDetails">
                         <div class="donutPrice">
-                            <span><span class="price">22</span>
+                            <span class="price">22</span>
                                 <p class="priceText"> kr</p>
                         </div>
                         <div class="donutAmount">
@@ -136,28 +135,28 @@
             <form class="form" id="form">
                 <div class="column1">
                     <div class="form-control">
-                        <label for="">Förnamn</label>
+                        <label for="firstName">Förnamn</label>
                         <input type="text" placeholder="Förnamn" id="firstName">
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <small class="toggle-hidden"></small>
                     </div>
                     <div class="form-control">
-                        <label for="">Efternamn</label>
+                        <label for="lastName">Efternamn</label>
                         <input type="text" placeholder="Efternamn" id="lastName">
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <small class="toggle-hidden"></small>
                     </div>
                     <div class="form-control">
-                        <label for="">Adress</label>
+                        <label for="street">Adress</label>
                         <input type="text" placeholder="Gatuadress" id="street">
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <small class="toggle-hidden"></small>
                     </div>
                     <div class="form-control">
-                        <label for="">Postnummer</label>
+                        <label for="zipCode">Postnummer</label>
                         <input type="text" placeholder="Postnummer" id="zipCode" pattern="[0-9]+">
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
@@ -166,28 +165,28 @@
                 </div>
                 <div class="column2">
                     <div class="form-control">
-                        <label for="">Postort</label>
+                        <label for="city">Postort</label>
                         <input type="text" placeholder="Postort" id="city">
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <small class="toggle-hidden"></small>
                     </div>
                     <div class="form-control">
-                        <label for="">Portkod</label>
+                        <label for="code">Portkod</label>
                         <input type="text" placeholder="Portkod" id="code" pattern="[0-9]+">
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <small class="toggle-hidden"></small>
                     </div>
                     <div class="form-control">
-                        <label for="">Telefonnummer</label>
+                        <label for="phone">Telefonnummer</label>
                         <input type="tel" placeholder="Telefonnummer" id="phone">
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
                         <small class="toggle-hidden"></small>
                     </div>
                     <div class="form-control">
-                        <label for="">E-postadress</label>
+                        <label for="email">E-postadress</label>
                         <input type="email" placeholder="E-postadress" id="email">
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
@@ -195,14 +194,14 @@
                     </div>
                 </div>
                 <div class="form-control discount">
-                    <label for="">Rabattkod</label>
+                    <label for="discountInput">Rabattkod</label>
                     <input type="text" placeholder="Rabattkod" id="discountInput">
                 </div>
                 <div class="cartOptions">
                     <input type="radio" id="card" name="paymentOption" value="card">
-                    <label class="card-text" for="paymentOption1">Kort</label>
+                    <label class="card-text" for="card">Kort</label>
                     <input type="radio" id="invoice" name="paymentOption" value="invoice">
-                    <label class="invoice-text" for="paymentOption2">Faktura</label>
+                    <label class="invoice-text" for="invoice">Faktura</label>
                     <div class="form-control" id="cardDetails">
                         <label>Kortnummer</label>
                         <input type="text" placeholder="Kortnummer" id="cardNumber">
@@ -234,7 +233,6 @@
                                 <option value="y28">28</option>
                                 <option value="y29">29</option>
                             </select>
-                            </label>
                         </div>
                         <label>CVV</label>
                         <input type="text" placeholder="CVV" id="cardCVV">
@@ -242,7 +240,7 @@
                         <input type="text" placeholder="Namn" id="cardOwner">
                     </div>
                     <div class="form-control" id="invoiceDetails">
-                        <label for="">Personnummer</label>
+                        <label for="socialSecurity">Personnummer</label>
                         <input type="text" placeholder="Personnummer" id="socialSecurity">
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
@@ -259,8 +257,7 @@
                 </div>
                 <button id="orderButton">Beställ</button>
                 <button id="clear" type="reset">Rensa</button>
-        </div>
-        </form>
+            </form>
         </div>
     </main>
     <script src="script.js"></script>

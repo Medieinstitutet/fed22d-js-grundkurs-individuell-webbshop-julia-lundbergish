@@ -303,20 +303,25 @@
   font-family: 'Jost', sans-serif;
   padding-bottom: 20px;
 
+  img {
+    margin-bottom: 40px;
+    margin-left: 5%;
+  }
+
   .donutName {
     margin-left: 35%;
-    margin-top: -95px;
+    margin-top: -110px;
   }
 
   .donutDetails {
     margin-left: 35%;
-    margin-top: -15px;
+    margin-top: -20px;
     font-size: 0.9rem;
   }
 
   .priceText {
     margin-top: -21px;
-    margin-left: 9%;
+    margin-left: 6%;
   }
 
   .donutAmount {
@@ -330,6 +335,19 @@
   background-color: #afddff;
   padding: 5px;
 
+  #cartTotal {
+    font-family: 'Jost', sans-serif;
+
+    #totalText {
+      margin-left: 8%;
+    }
+
+    #totalPriceText {
+      margin-left: 18%;
+      margin-top: -39px;
+    }
+  }
+
   #cartText {
     font-family: 'Jost', sans-serif;
     margin-left: 8%;
@@ -338,7 +356,7 @@
   #orderDonutsText {
     font-family: 'Jost', sans-serif;
     margin-left: 8%;
-    margin-bottom: -15px;
+    margin-bottom: 15px;
   }
 
   .header {
@@ -429,8 +447,13 @@
     padding: 0;
     white-space: nowrap;
     clip-path: inset(100%);
-    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
     overflow: hidden;
+  }
+
+  #discountText{
+    font-family: 'Jost', sans-serif;
+    margin-left: 8%;
   }
 }
 
@@ -466,7 +489,6 @@
 #cardCVV {
   width: 30%;
   margin-bottom: 10px;
-  padding-bottom: -5px;
 }
 
 /* ------------ Surfplatta layout -------------- */
@@ -682,7 +704,6 @@
   .filter {
     margin-left: 60%;
     margin-top: 80px;
-    padding-bottom: -20px;
   }
 
   .filterItem {
@@ -844,6 +865,7 @@
 
     img {
       margin-bottom: 20px;
+      margin-left: 0%;
     }
 
     .donutName {
@@ -1007,7 +1029,7 @@
       padding: 0;
       white-space: nowrap;
       clip-path: inset(100%);
-      clip: rect(0 0 0 0);
+      clip: rect(0, 0, 0, 0);
       overflow: hidden;
     }
 
@@ -1036,6 +1058,11 @@
     .checkbox {
       font-family: 'Jost', sans-serif;
       font-size: 0.9rem;
+    }
+
+    #discountText{
+      font-family: 'Jost', sans-serif;
+      margin-left: 3%;
     }
   }
 

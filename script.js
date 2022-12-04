@@ -503,10 +503,10 @@ for (let i = 0; i < donuts.length; i++) {
   }
 }
 
-if (today.getDay() === 1 && today.getHours() > 10) {
+if (today.getDay() === 0 && today.getHours() > 10) {
   discount.innerHTML += `
-  <p id="discountText">Måndagsrabatt! Njut av 10 % rabatt på din beställning!</p>
-  ${totalPrice * 0.1} kr. Totalsumman blir: ${totalPrice * 0.9} kr.`;
+  <p id="discountText">Måndagsrabatt! Njut av 10 % rabatt på din beställning!
+  ${totalPrice * 0.1} kr. Totalsumman blir: ${totalPrice * 0.9} kr.</p>`;
   console.log(
     "Måndagsrabatt! Njut av 10 % rabatt på din beställning:",
     totalPrice * 0.1,
