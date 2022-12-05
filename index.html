@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d5373c47b8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Gottfrids munkfabrik</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1 id="gottfrid">Gottfrids Munkfabrik</h1>
+            <img class="logo" src="images/gottfrid-logo.png" alt="Gottfrids munkfabrik logotype" height="90">
+            <!-- Shopping cart icon -->
+            <p id="priceText"></p>
+            <ul class="navlink">
+                <li><a href="#">Om Oss</a></li>
+                <li><a href="#">Kontakt</a></li>
+                <li><a aria-label="Varukorg" href="#"><i aria-hidden="true" class="fa-solid fa-cart-shopping"></i></a>
+                </li>
+            </ul>
+            <button aria-label=”Navigation” class="nav-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+    <main>
+        <!-- Filter -->
+        <div class="filter">
+            <p>Sortera efter:</p>
+            <ul class="filterList">
+                <li class="filterItem"><a href="#">Populära</a></li>
+                <li class="filterItem"><a href="#">A-Z</a></li>
+                <li class="filterItem" id="priceSort"><a href="#">Pris</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <button id="dropBtn">Filtrera</button>
+            <div id="filterDropdown" class="dropdown-content">
+                <ul class="mobileDropdown">
+                    <li class="filterItem"><a href="#">Populära</a></li>
+                    <li class="filterItem"><a href="#">A-Z</a></li>
+                    <li class="filterItem" id="priceSortMobile"><a href="#">Pris</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Special donut -->
+        <section id="donutContainer">
+            <div class="donuts">
+                <article class="special-donut">
+                    <img src="images/special-donut.png" alt="" height="240">
+                    <div class="donutContent">
+                        <h2 class="donutNameSpecial">Månadens donut</h2>
+                        <h3 class="donutName">Chocolat</h3>
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+                            aperiam, optio
+                            ullam alias dolore maiores necessitatibus sit dolor molestiae tenetur cum.
+                            <br><br>
+                            Odio quasi magnam nobis debitis unde incidunt. Commodi laborum velit.
+                        </p>
+                        <!-- Rating icons -->
+                        <div class="donutDetails">
+                            <div class="donutPrice">
+                                <span class="price">22</span>
+                                    <p class="priceText"> kr</p>
+                            </div>
+                            <div class="donutAmount">
+                                <span class="amount">0</span> st
+                                <span class="sum">0 kr</span>
+                                <button class="minus" data-operator="minus">-</button>
+                                <button class="plus" data-operator="plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- Donut grid -->
+                <article class="donutGrid">
+                    <img src="images/special-donut.png" alt="" height="240">
+                    <div class="donutContent">
+                        <h3 class="donutName">Caramel Crisp</h3>
+                            <!-- Rating icons -->
+                            <div class="donutDetails">
+                                <div class="donutPrice">
+                                    <span class="price">16</span>
+                                        <p class="priceText"> kr</p>
+                                </div>
+                                <div class="donutAmount">
+                                    <span class="amount">0</span> st
+                                    <span class="sum">0 kr</span>
+                                    <button class="minus" data-operator="minus">-</button>
+                                    <button class="plus" data-operator="plus">+</button>
+                                </div>
+                            </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Cart and form -->
+        <div class="cartContainer">
+            <div class="cartHeader">
+                <h3 id="cartText">Varukorg</h3>
+            </div>
+            <div id="cart">
+                <img src="images/special-donut.png" alt="" height="90">
+                <h4 class="donutName">Caramel Crisp</h4>
+                    <div class="donutDetails">
+                        <div class="donutPrice">
+                            <span class="price">22</span>
+                                <p class="priceText"> kr</p>
+                        </div>
+                        <div class="donutAmount">
+                            <span class="amount" id="cartAmount">0</span> st
+                            <span class="sum" id="cartSum">0 kr</span>
+                        </div>
+                    </div>
+            </div>
+            <div id="cartTotal">
+                <p id="totalText">Totalt: </p>
+                <p id="totalPriceText"></p>
+            </div>
+            <div id="discount">
+                <p id="discountText"></p>
+            </div>
+            <h3 id="orderDonutsText">Beställ</h3>
+
+            <form class="form" id="form">
+                <div class="column1">
+                    <div class="form-control">
+                        <label for="firstName">Förnamn</label>
+                        <input type="text" placeholder="Förnamn" id="firstName">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="lastName">Efternamn</label>
+                        <input type="text" placeholder="Efternamn" id="lastName">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="street">Adress</label>
+                        <input type="text" placeholder="Gatuadress" id="street">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="zipCode">Postnummer</label>
+                        <input type="text" placeholder="Postnummer" id="zipCode" pattern="[0-9]+">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
+                </div>
+                <div class="column2">
+                    <div class="form-control">
+                        <label for="city">Postort</label>
+                        <input type="text" placeholder="Postort" id="city">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="code">Portkod</label>
+                        <input type="text" placeholder="Portkod" id="code" pattern="[0-9]+">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="phone">Telefonnummer</label>
+                        <input type="tel" placeholder="Telefonnummer" id="phone">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="email">E-postadress</label>
+                        <input type="email" placeholder="E-postadress" id="email">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
+                </div>
+                <div class="form-control discount">
+                    <label for="discountInput">Rabattkod</label>
+                    <input type="text" placeholder="Rabattkod" id="discountInput">
+                </div>
+                <div class="cartOptions">
+                    <input type="radio" id="card" name="paymentOption" value="card">
+                    <label class="card-text" for="card">Kort</label>
+                    <input type="radio" id="invoice" name="paymentOption" value="invoice">
+                    <label class="invoice-text" for="invoice">Faktura</label>
+                    <div class="form-control" id="cardDetails">
+                        <label>Kortnummer</label>
+                        <input type="text" placeholder="Kortnummer" id="cardNumber">
+                        <div class="cardExpiration">
+                            <label>Utgångsdatum</label>
+                            <select id="cardMonth">
+                                <option selected disabled="">Månad</option>
+                                <option value="m01">01</option>
+                                <option value="m02">02</option>
+                                <option value="m03">03</option>
+                                <option value="m04">04</option>
+                                <option value="m05">05</option>
+                                <option value="m06">06</option>
+                                <option value="m07">07</option>
+                                <option value="m08">08</option>
+                                <option value="m09">09</option>
+                                <option value="m10">10</option>
+                                <option value="m11">11</option>
+                                <option value="m12">12</option>
+                            </select>
+                            <select id="cardYear">
+                                <option selected disabled="">År</option>
+                                <option value="y22">22</option>
+                                <option value="y23">23</option>
+                                <option value="y24">24</option>
+                                <option value="y25">25</option>
+                                <option value="y26">26</option>
+                                <option value="y27">27</option>
+                                <option value="y28">28</option>
+                                <option value="y29">29</option>
+                            </select>
+                        </div>
+                        <label>CVV</label>
+                        <input type="text" placeholder="CVV" id="cardCVV">
+                        <label>Namn på kortinnehavare:</label>
+                        <input type="text" placeholder="Namn" id="cardOwner">
+                    </div>
+                    <div class="form-control" id="invoiceDetails">
+                        <label for="socialSecurity">Personnummer</label>
+                        <input type="text" placeholder="Personnummer" id="socialSecurity">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="toggle-hidden"></small>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="personalDetails" name="personuppgifter">
+                        <label for="personalDetails">Jag godkänner att mina personuppgifter behandlas</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="newsLetter" name="newsLetter">
+                        <label for="newsLetter">Jag vill prenumerera på nyhetsbrevet</label>
+                    </div>
+                </div>
+                <button id="orderButton">Beställ</button>
+                <button id="clear" type="reset">Rensa</button>
+            </form>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

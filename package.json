@@ -1,0 +1,24 @@
+{
+  "name": "fed22d-js-grundkurs-individuell-webbshop-julia-lundbergish",
+  "version": "1.0.0",
+  "description": "Webbshop",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Medieinstitutet/fed22d-js-grundkurs-individuell-webbshop-julia-lundbergish.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Medieinstitutet/fed22d-js-grundkurs-individuell-webbshop-julia-lundbergish/issues"
+  },
+  "homepage": "https://github.com/Medieinstitutet/fed22d-js-grundkurs-individuell-webbshop-julia-lundbergish#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2"
+  }
+}

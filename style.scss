@@ -1,0 +1,1068 @@
+* {
+  box-sizing: border-box;
+}
+
+#gottfrid {
+  display: none;
+}
+
+.navlink {
+  display: none;
+}
+
+.logo {
+  height: 60px;
+  margin-top: 20px;
+  margin-left: 2%;
+}
+
+/* Navigering */
+
+.nav-button {
+  width: 35px;
+  height: 35px;
+  background: transparent;
+  border: 0;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.nav-button span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  border-radius: 6px;
+  margin-bottom: 4px;
+}
+
+/* Filterlista */
+
+.filter,
+.filterList {
+  display: none;
+}
+
+/* Dropdown */
+
+#dropBtn {
+  background-color: #afddff;
+  color: black;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  font-family: "Jost", sans-serif;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: -30px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 75%;
+  margin-top: 30px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 50px;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: "Jost", sans-serif;
+  font-size: 0.9rem;
+}
+
+.mobileDropdown {
+  list-style: none;
+  margin-left: -30px;
+}
+
+.show {
+  display: block;
+}
+
+/* Månadens munk */
+
+.special-donut {
+  display: flex;
+  flex: 3 0px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  font-family: "Jost", sans-serif;
+
+  img {
+    width: 140px;
+    height: auto;
+    margin-right: 80px;
+    display: inline;
+  }
+
+  .donutNameSpecial {
+    font-size: 1.2rem;
+    margin-left: 10%;
+  }
+
+  .donutName {
+    font-size: 1rem;
+    margin-left: 10%;
+    margin-top: -15px;
+  }
+
+  .description {
+    display: none;
+  }
+
+  .donutContent {
+    margin-left: 40%;
+    margin-top: -155px;
+  }
+
+  .donutDetails {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .price {
+    margin-left: 100%;
+  }
+
+  .priceText {
+    margin-left: 230%;
+    margin-top: -23px;
+  }
+
+  .minus {
+    height: 35px;
+    width: 35px;
+    background-color: #afddff;
+    border: solid 1px black;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    margin-top: 35px;
+    margin-left: 10px;
+  }
+
+  .plus {
+    height: 35px;
+    width: 35px;
+    background-color: #afddff;
+    border: solid 1px black;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .amount,
+  .sum {
+    font-size: 0.9rem;
+  }
+}
+
+/* Munkar */
+
+.donutGrid {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-family: "Jost", sans-serif;
+
+  &:nth-of-type(2) {
+    button {
+      background-color: #FFCAE3;
+    }
+  }
+
+  &:nth-of-type(3) {
+    button {
+      background-color: #FFF8BA;
+    }
+  }
+
+  &:nth-of-type(4) {
+    button {
+      background-color: #D4FDD3;
+    }
+  }
+
+  &:nth-of-type(5) {
+    button {
+      background-color: #afddff;
+    }
+  }
+
+  &:nth-of-type(6) {
+    button {
+      background-color: #FFCAE3;
+    }
+  }
+
+  &:nth-of-type(7) {
+    button {
+      background-color: #FFF8BA;
+    }
+  }
+
+  &:nth-of-type(8) {
+    button {
+      background-color: #D4FDD3;
+    }
+  }
+
+  &:nth-of-type(9) {
+    button {
+      background-color: #afddff;
+    }
+  }
+
+  &:nth-of-type(10) {
+    button {
+      background-color: #FFCAE3;
+    }
+  }
+
+  img {
+    width: 140px;
+    height: auto;
+    margin-right: 80px;
+    display: inline;
+  }
+
+  .donutName {
+    font-size: 1rem;
+    margin-left: 0%;
+    font-family: "Jost", sans-serif;
+  }
+
+  .description {
+    display: none;
+  }
+
+  .donutContent {
+    margin-left: 45.5%;
+    margin-top: -155px;
+  }
+
+  .donutDetails {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .price {
+    margin-left: 0%;
+  }
+
+  .priceText {
+    margin-top: -23px;
+    margin-left: 260%;
+  }
+
+  .minus {
+    height: 35px;
+    width: 35px;
+    background-color: #afddff;
+    border: solid 1px black;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    margin-top: 35px;
+    margin-left: 10px;
+  }
+
+  .plus {
+    height: 35px;
+    width: 35px;
+    background-color: #afddff;
+    border: solid 1px black;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .amount,
+  .sum {
+    font-size: 0.9rem;
+  }
+}
+
+#cart {
+  margin-left: 5%;
+  font-family: 'Jost', sans-serif;
+  padding-bottom: 20px;
+
+  img {
+    margin-bottom: 40px;
+    margin-left: 5%;
+  }
+
+  .donutName {
+    margin-left: 35%;
+    margin-top: -110px;
+  }
+
+  .donutDetails {
+    margin-left: 35%;
+    margin-top: -20px;
+    font-size: 0.9rem;
+  }
+
+  .priceText {
+    margin-top: -21px;
+    margin-left: 6%;
+  }
+
+  .donutAmount {
+    margin-top: -5px;
+  }
+}
+
+.cartContainer {
+  margin-left: 2%;
+  margin-right: 2%;
+  background-color: #afddff;
+  padding: 5px;
+
+  #cartTotal {
+    font-family: 'Jost', sans-serif;
+
+    #totalText {
+      margin-left: 8%;
+    }
+
+    #totalPriceText {
+      margin-left: 18%;
+      margin-top: -39px;
+    }
+  }
+
+  #cartText {
+    font-family: 'Jost', sans-serif;
+    margin-left: 8%;
+  }
+
+  #orderDonutsText {
+    font-family: 'Jost', sans-serif;
+    margin-left: 8%;
+    margin-bottom: 15px;
+  }
+
+  .header {
+    padding: 10px;
+  }
+
+  .form {
+    padding: 10px 15px;
+  }
+
+  .form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+
+  .form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-family: 'Jost', sans-serif;
+  }
+
+  .form-control input {
+    border: 1px solid black;
+    border-radius: 6px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+  }
+
+  .form-control.success input {
+    border-color: #2ecc71;
+  }
+
+  .form-control.error input {
+    border-color: #e74c3c;
+  }
+
+  .form-control i {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    visibility: hidden;
+  }
+
+  .form-control.success i.fa-check-circle {
+    visibility: visible;
+    color: #2ecc71;
+  }
+
+  .form-control.error i.fa-exclamation-circle {
+    visibility: visible;
+    color: #e74c3c;
+  }
+
+  .form-control small {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .form-control small {
+    visibility: visible;
+    color: #e74c3c;
+  }
+
+  .form button {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    display: block;
+    font-size: 1rem;
+    font-family: 'Jost', sans-serif;
+    border-radius: 6px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .toggle-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+  }
+
+  #discountText{
+    font-family: 'Jost', sans-serif;
+    margin-left: 8%;
+  }
+}
+
+.card-text,
+.invoice-text {
+  font-family: 'Jost', sans-serif;
+}
+
+.checkbox {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+#orderButton {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+#cardDetails {
+  display: none;
+}
+
+#invoiceDetails {
+  display: none;
+}
+
+.cardExpiration {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#cardCVV {
+  width: 30%;
+  margin-bottom: 10px;
+}
+
+/* ------------ Surfplatta layout -------------- */
+
+@media screen and (min-width: 750px) {
+
+  .special-donut {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    img {
+      width: auto;
+      height: 220px;
+      margin-right: 80px;
+      display: inline;
+      margin-left: 4%;
+    }
+
+    .donutContent {
+      margin-left: 40%;
+      margin-top: -300px;
+      margin-right: 20%;
+    }
+
+    .donutNameSpecial {
+      margin-top: 80px;
+      font-size: 1.4rem;
+      background-image: url("/images/blue-shape.png");
+      background-repeat: no-repeat;
+      background-size: 65%;
+      padding-right: 50px;
+      padding-left: 15px;
+      margin-left: -15px;
+    }
+
+    .priceText {
+      margin-top: -23px;
+      margin-left: 130%;
+      font-size: 1rem;
+    }
+    .description {
+      display: block;
+      font-size: 0.9rem;
+      margin-top: -15px;
+    }
+
+    .donutName {
+      font-size: 1.1rem;
+      margin-left: 0;
+      margin-top: -15px;
+    }
+
+    .price {
+      font-size: 1rem;
+      margin-left: 15%;
+      margin-top: -50px;
+    }
+
+    .description {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .donutDetails {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .donutAmount {
+      margin-left: 35%;
+      margin-top: -30px;
+
+      .plus {
+        margin-left: 15px;
+      }
+
+      .minus {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  .donutGrid {
+    img {
+      margin-left: 4%;
+      width: auto;
+      height: 220px;
+    }
+
+    .donutName {
+      font-size: 1.1rem;
+    }
+
+    .description {
+      display: none;
+    }
+
+    .donutContent {
+      margin-left: 40%;
+      margin-top: -190px;
+    }
+  }
+
+  #cart {
+    margin-left: 3%;
+    font-family: 'Jost', sans-serif;
+    padding-bottom: 20px;
+
+    .donutName {
+      margin-left: 16%;
+      margin-top: -95px;
+    }
+
+    .donutDetails {
+      margin-left: 16%;
+      margin-top: -15px;
+      font-size: 0.9rem;
+    }
+
+    .priceText {
+      margin-top: -21px;
+      margin-left: 3.5%;
+    }
+
+    .donutAmount {
+      margin-top: -5px;
+    }
+  }
+
+  .cartContainer {
+    #cartText {
+      margin-left: 3%;
+    }
+
+    #orderDonutsText {
+      margin-left: 3%;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+
+/* ------------ Desktop layout -------------- */
+
+@media screen and (min-width: 1024px) {
+  #gottfrid {
+    display: none;
+  }
+
+  /* Header och nav */
+
+  .logo {
+    margin-top: 30px;
+    margin-left: 4%;
+  }
+
+  .nav-button {
+    display: none;
+  }
+
+  nav {
+    display: block;
+    height: 100px;
+    width: 100%;
+    background: white;
+    margin: 0px;
+    z-index: 9;
+  }
+
+  .navlink {
+    text-decoration: underline;
+    list-style: none;
+    max-width: 800px;
+    width: 35%;
+    margin-top: -55px;
+    margin-left: auto;
+    padding: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    a {
+      color: black;
+    }
+
+    a:hover {
+      color: grey;
+    }
+  }
+
+  /* Filterlista */
+
+  .filter,
+  .filterList {
+    list-style: none;
+    display: flex;
+    font-family: "Jost", sans-serif;
+    font-weight: lighter;
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: grey;
+      text-decoration: none;
+    }
+  }
+
+  .filter {
+    margin-left: 60%;
+    margin-top: 80px;
+  }
+
+  .filterItem {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  /* Dropdown */
+
+  .dropBtn,
+  .dropdown {
+    display: none;
+  }
+
+  /* Donut grid */
+
+  .donuts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Månadens donut */
+
+  .special-donut {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    img {
+      width: auto;
+      height: 300px;
+      margin-right: 80px;
+      display: inline;
+      margin-left: 4%;
+    }
+
+    .donutContent {
+      margin-left: 30%;
+      margin-top: -350px;
+      margin-right: 20%;
+    }
+
+    .donutNameSpecial {
+      font-size: 1.8rem;
+      background-image: url("../images/blue-shape.png");
+      background-repeat: no-repeat;
+      background-size: 36%;
+      padding-right: 50px;
+      padding-left: 20px;
+      margin-left: -20px;
+    }
+
+    .priceText {
+      margin-top: -28px;
+      margin-left: 130%;
+      font-size: 1.2rem;
+    }
+
+    .description {
+      display: block;
+    }
+
+    .donutName {
+      font-size: 1.2rem;
+      margin-left: 0;
+      margin-top: -10px;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      margin-left: 5%;
+    }
+
+    .description {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .donutDetails {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .donutAmount {
+      margin-left: 55%;
+
+      .plus {
+        margin-left: 15px;
+      }
+
+      .minus {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  /* Munkar */
+
+  .donutGrid {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    font-family: 'Jost', sans-serif;
+
+    img {
+      width: auto;
+      height: 300px;
+      margin-right: 80px;
+      display: inline;
+      margin-left: 12%;
+    }
+
+    .donutContent {
+
+      margin-top: 30px;
+      margin-left: 12%;
+    }
+
+    .donutName {
+      font-size: 1.2rem;
+      margin-left: 0;
+      margin-top: -10px;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      margin-left: 0%;
+    }
+
+    .priceText {
+      margin-left: 130%;
+      margin-top: -28px;
+      font-size: 1.2rem;
+    }
+
+    .donutDetails {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .donutAmount {
+      margin-right: 24%;
+
+      .plus {
+        margin-left: 15px;
+      }
+
+      .minus {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  /* Kassa och formulär */
+
+  #cart {
+    margin-left: 3%;
+    font-family: 'Jost', sans-serif;
+    padding-bottom: 20px;
+
+    img {
+      margin-bottom: 20px;
+      margin-left: 0%;
+    }
+
+    .donutName {
+      margin-left: 10%;
+      margin-top: -95px;
+    }
+
+    .donutDetails {
+      margin-left: 10%;
+      margin-top: -15px;
+      font-size: 0.9rem;
+    }
+
+    .priceText {
+      margin-top: -21px;
+      margin-left: 2%;
+    }
+
+    .donutAmount {
+      margin-top: -5px;
+    }
+  }
+
+  .cartContainer {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #afddff;
+
+    #cartTotal {
+      font-family: 'Jost', sans-serif;
+
+      #totalText {
+        margin-left: 3%;
+      }
+
+      #totalPriceText {
+        margin-left: 7%;
+        margin-top: -39px;
+      }
+    }
+
+    #orderDonutsText {
+      font-family: 'Jost', sans-serif;
+    }
+
+    .header {
+      padding: 20px;
+    }
+
+    .form {
+      padding: 30px 40px;
+    }
+
+    .column1 {
+      margin-right: 50%;
+    }
+
+    .column2 {
+      margin-left: 45%;
+      margin-top: -411px;
+    }
+
+    .form-control {
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-bottom: 10px;
+      padding-bottom: 20px;
+      position: relative;
+    }
+
+    .discount {
+      margin-left: 5%;
+      margin-right: 55%;
+    }
+
+    .form-control label {
+      display: inline-block;
+      margin-bottom: 5px;
+      font-family: 'Jost', sans-serif;
+    }
+
+    .form-control input {
+      display: grid;
+      grid-template-columns: 40% 40%;
+      border: 1px solid black;
+      border-radius: 6px;
+      display: block;
+      width: 100%;
+      padding: 10px;
+      font-family: 'Jost', sans-serif;
+      font-size: 1rem;
+    }
+
+    .form-control.success input {
+      border-color: #2ecc71;
+    }
+
+    .form-control.error input {
+      border-color: #e74c3c;
+    }
+
+    .form-control i {
+      position: absolute;
+      top: 40px;
+      right: 10px;
+      visibility: hidden;
+    }
+
+    .form-control.success i.fa-check-circle {
+      visibility: visible;
+      color: #2ecc71;
+    }
+
+    .form-control.error i.fa-exclamation-circle {
+      visibility: visible;
+      color: #e74c3c;
+    }
+
+    .form-control small {
+      visibility: hidden;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    .form-control small {
+      visibility: visible;
+      color: #e74c3c;
+    }
+
+    .form button {
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+      display: block;
+      font-size: 1rem;
+      font-family: 'Jost', sans-serif;
+      border-radius: 6px;
+      padding: 10px;
+      width: 30%;
+      margin-left: 35%;
+      margin-top: 10px;
+    }
+
+    .form button:hover {
+      background-color: #D4FDD3;
+    }
+
+    #clear:hover {
+      background-color: #FFCAE3;
+    }
+
+    .toggle-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      white-space: nowrap;
+      clip-path: inset(100%);
+      clip: rect(0, 0, 0, 0);
+      overflow: hidden;
+    }
+
+    .cartOptions {
+      margin-left: 5%;
+    }
+
+    #cardCVV {
+      width: 20%;
+      margin-bottom: 10px;
+    }
+
+    #cardDetails {
+      display: none;
+      margin-left: 0;
+      margin-top: 10px;
+      margin-right: 58%;
+    }
+
+    #invoiceDetails {
+      display: none;
+      margin-left: 0;
+      margin-right: 58%;
+    }
+
+    .checkbox {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+    }
+
+    #discountText{
+      font-family: 'Jost', sans-serif;
+      margin-left: 3%;
+    }
+  }
+
+}
